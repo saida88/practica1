@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>{{ idArquitecte }} Gratacel</title>
+</head>
+<body>
+<h1>Gratacels construits per {{ idArquitecte }}</h1>
+{% if gratacels %}
+<ul>
+{% for gratacel in gratacels %}
+<li>
+{{gratacel.nom}} - {{ gratacel.superficie}} - {{ sobre.altura }}m
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No ha construit gratacels.</p>
+{% endif %}
+</body>
+</html>
+

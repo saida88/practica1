@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="MediaUp" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="all" />
+	<title>Bluesiness Free CSS Template</title>
+
+	<script type="text/javascript"></script>
+	
+	<style type="text/css" title="currentStyle" media="all">
+		@import "global.css";
+	</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div id="head">
+        <img class="header_image" src="img/header_image.jpg" alt="Header image" />
+    	<img class="icon" src="img/logo.jpg" alt="Logo" />
+    	<h1>Gratacels</h1>
+        <h2>Data Base</h2>
+    </div>
+    <div id="main">
+    	<div id="navi">
+        	<ul>
+            	<li><a class="selected" href="#">Home</a></li>
+            	<li><a href="#">Arquitectes</a></li>
+            	<li><a href="#">Gratacels</a></li>
+            	<li><a href="#">Estils</a></li>
+            	<li><a href="#">Materials</a></li>
+            </ul><br/>
+        	<ul>
+            	<li><a href="#">Imprint</a></li>
+            	<li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+		<div class="ic"></div>
+        <div id="content">
+       	  <div class="teaser">
+            <img src="img/teaser_image.jpg" alt="Teaser image" />
+            	<h2>Lorem ipsum vero</h2>
+              <p>"Bluesiness" is a free, tableless, W3C-compliant web design layout by Strompreisrechner.
+                 This template has been tested and proven compatible with all major browser environments 
+                 and operating systems. You are free to modify the design to suit your tastes in any way 
+                 you like.We only ask you to not remove "Strompreisrechner" and the link <a href="http://www.stromangebot.org">http://www.stromangebot.org</a>                 from the footer of the template. Have fun! ;)</p>
+            </div>
+            <h2>Lorem Ipsum Dolor Sit Amit</h2>
+            <p>"Bluesiness" is a free, tableless, W3C-compliant web design layout by Strompreisrechner. This template 
+            has been tested and proven compatible with all major browser environments and operating systems. 
+            You are free to modify the design to suit your tastes in any way you like.We only ask you to not 
+            remove "Strompreisrechner" and the link <a href="http://www.stromangebot.org">http://www.stromangebot.org</a> from the footer of the template. Have fun! ;)</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+            laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis 
+            at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis 
+            dolore te feugait nulla facilisi.</p>
+            <ul>
+              <li> Lorem ipsum dolor sit amet.</li>
+              <li> Consectetuer adipiscing elit.</li>
+              <li> Maecenas ac lacus. Etiam quis ante.</li>
+              <li> Nullam accumsan metus sit amet est.</li>
+              <li> Nullam diam. Nunc ac ipsum at nisl pretium congue.</li>
+            </ul>
+            <p>Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Vivamus fermentum 
+            nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, 
+            nibh. Quisque <a href="#">semper</a> augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim.</p>
+      </div>
+    </div>
+    <div id="footer">
+    	<p> Autors: David Hernandez, David Canudes, Saida Javierre </p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 *.py[cod]
+mybasedades.db
 
 # C extensions
 *.so

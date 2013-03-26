@@ -18,8 +18,8 @@ class Materials (models.Model):
 class Estil (models.Model): 
 	idEstil = models.IntegerField(primary_key=True)
 	nom = models.TextField(max_length=25)
-	data_inici = models.DateTimeField()
-	data_fi = models.DateTimeField()
+	dataInici = models.IntegerField(max_length=4)
+	dataFi = models.IntegerField(max_length=4, blank = True)
 
 class Gratacel (models.Model):
 	idGratacel = models.IntegerField(primary_key=True)
@@ -31,7 +31,7 @@ class Gratacel (models.Model):
 	ciutat = models.TextField(max_length=25)
 	any_inici = models.IntegerField()
 	idEstil = models.ForeignKey(Estil)
-	posicio_ranking = models.IntegerField()
+	posicio_ranking = models.IntegerField(blank=True)
 	arquitectes = models.ManyToManyField(Arquitecte)
 	materials = models.ManyToManyField(Materials)
 
