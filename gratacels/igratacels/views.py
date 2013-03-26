@@ -22,15 +22,26 @@ def arquitectepage(request, idArquitecte):
 	except:
 		raise Http404('Arquitecte no trobat')
 
-	try:
-		relacio_arquitecte_gratacel =Gratacel_arquitectes.objects.get(idArquitecte=idArquitecte)
-	except:
-		raise Http404('Arquitecte no te gratacels')
-
 	gratacels=arquitecte.gratacel_set.all()
 	template = get_template('arquitectepage.html')
 	variables = Context({
 		'idArquitecte': idArquitecte,
+		'gratacels': gratacels
+		})
+	output = template.render(variables)
+	return HttpResponse(output)
+
+def estilpage(request, idEstil):
+
+	try:
+		estil = Estil.objects.get(idEstil=idEstil)
+	except:
+		raise Http404('Estil no trobat')
+
+	gratacels=estil.gratacel_set.all()
+	template = get_template('estilpage.html')
+	variables = Context({
+		'idEstil': idEstil,
 		'gratacels': gratacels
 		})
 	output = template.render(variables)
