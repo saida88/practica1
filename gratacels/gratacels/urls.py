@@ -19,4 +19,5 @@ urlpatterns = patterns('',
     url(r'^$', mainpage, name='home'),
     url(r'^arquitecte/(\w+)/$', arquitectepage),
     url(r'^estil/(\w+)/$', estilpage),
+    url(r'^material/(\w+)/$', materialpage),
 )

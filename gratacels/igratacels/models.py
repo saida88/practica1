@@ -3,28 +3,29 @@ from django.db import models
 # Create your models here.
 
 class Arquitecte (models.Model):
-	idArquitecte = models.IntegerField(primary_key=True)
+	idArquitecte = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
 	cognom = models.TextField(max_length=25)
-	data_naixement = models.DateTimeField()
+	data_naixement = models.DateField()
+	data_defuncio = models.DateField(blank=True)
 	nacionalitat = models.TextField(max_length=25)
+	imatge = models.TextField()
 
-class Materials (models.Model):
-	idMaterial = models.IntegerField(primary_key=True)
+class Material (models.Model):
+	idMaterial = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
 	densitat = models.FloatField()
 	cost = models.FloatField()
 
 class Estil (models.Model): 
-	idEstil = models.IntegerField(primary_key=True)
+	idEstil = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
 	dataInici = models.IntegerField(max_length=4)
 	dataFi = models.IntegerField(max_length=4, blank = True)
 
 class Gratacel (models.Model):
-	idGratacel = models.IntegerField(primary_key=True)
+	idGratacel = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
-	superficie = models.IntegerField()
 	altura = models.IntegerField()
 	altura_terrat = models.IntegerField()
 	num_plantes = models.IntegerField()
@@ -33,7 +34,8 @@ class Gratacel (models.Model):
 	idEstil = models.ForeignKey(Estil)
 	posicio_ranking = models.IntegerField(blank=True)
 	arquitectes = models.ManyToManyField(Arquitecte)
-	materials = models.ManyToManyField(Materials)
+	materials = models.ManyToManyField(Material)
+	imatge = models.TextField()
 
 #class GratacelsArquitecte (models.Model):
 #	idGratacel = models.ForeignKey(Gratacel, primary_key=True)

@@ -47,3 +47,18 @@ def estilpage(request, idEstil):
 	output = template.render(variables)
 	return HttpResponse(output)
 
+def materialpage(request, idMaterial):
+
+	try:
+		material = Material.objects.get(idMaterial=idMaterial)
+	except:
+		raise Http404('Material no trobat')
+
+	gratacels=material.gratacel_set.all()
+	template = get_template('materialpage.html')
+	variables = Context({
+		'idMaterial': idMaterial,
+		'gratacels': gratacels
+		})
+	output = template.render(variables)
+	return HttpResponse(output)
