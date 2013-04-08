@@ -12,8 +12,7 @@
 	<script type="text/javascript"></script>
 	
 	<style type="text/css" title="./currentStyle" media="all">
-		@import "global.css";
-		{% include 'global.css' %}
+		@import "/static/global.css";
 	</style>
 </head>
 
@@ -21,24 +20,24 @@
 
 <div id="wrapper">
 	<div id="head">
-        <img class="header_image" src="img/header_image.jpg" alt="Header image" />
-    	<img class="icon" src="img/logo.jpg" alt="Logo" />
+        <img class="header_image" src="/static/img/header_image.jpg" alt="Header image" />
+    	<img class="icon" src="/static/img/logo.jpg" alt="Logo" />
     	<h1>Gratacels</h1>
         <h2>DataBase</h2>
     </div>
     <div id="main">
     	<div id="navi">
         	<ul>
-            	<li><a class="selected" href="mainpage.htmls">Home</a></li>
-            	<li><a href="gratacelpage.html">Gratacels</a></li>
-            	<li><a href="arquitectepage.html">Arquitectes</a></li>
-            	<li><a href="estilpage.html">Estils</a></li>
-            	<li><a href="materialpsage.html">Materials</a></li>
+            	<li><a class="selected" href="home">Home</a></li>
+            	<li><a href="gratacel">Gratacels</a></li>
+            	<li><a href="arquitecte">Arquitectes</a></li>
+            	<li><a href="estil">Estils</a></li>
+            	<li><a href="material">Materials</a></li>
         </div>
 		<div class="ic"></div>
         <div id="content">
        	  <div class="teaser">
-            <img src="img/teaser_image.jpg" alt="Teaser image" />
+            <img src="/static/img/teaser_image.jpg" alt="Teaser image" />
             	<h2>Aplicació web sobre gratacels</h2>
               <p>Aplicació que permet obtenir dades sobre gratacels, els arquitectes que els han construit, l'estil arquitectònic i els materials utilitzats.</p>
             </div>

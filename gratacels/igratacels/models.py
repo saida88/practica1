@@ -7,7 +7,7 @@ class Arquitecte (models.Model):
 	nom = models.TextField(max_length=25)
 	cognom = models.TextField(max_length=25)
 	data_naixement = models.DateField()
-	data_defuncio = models.DateField(blank=True)
+	data_defuncio = models.DateField(blank=True,null=True)
 	nacionalitat = models.TextField(max_length=25)
 	imatge = models.TextField()
 
@@ -21,7 +21,7 @@ class Estil (models.Model):
 	idEstil = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
 	dataInici = models.IntegerField(max_length=4)
-	dataFi = models.IntegerField(max_length=4, blank = True)
+	dataFi = models.IntegerField(max_length=4, blank = True,null=True)
 
 class Gratacel (models.Model):
 	idGratacel = models.AutoField(primary_key=True)
@@ -32,7 +32,7 @@ class Gratacel (models.Model):
 	ciutat = models.TextField(max_length=25)
 	any_inici = models.IntegerField()
 	idEstil = models.ForeignKey(Estil)
-	posicio_ranking = models.IntegerField(blank=True)
+	posicio_ranking = models.IntegerField(blank=True, null=True)
 	arquitectes = models.ManyToManyField(Arquitecte)
 	materials = models.ManyToManyField(Material)
 	imatge = models.TextField()

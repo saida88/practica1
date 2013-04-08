@@ -38,31 +38,26 @@
         <div id="content">
 
 
-<h1>Dades del Arquitecte</h1>
-<ul>
-<li>Nom: {{arquitecte.nom}}</li>
-<li>Cognom: {{arquitecte.cognom}}</li>
-<li>Data Naixement: {{arquitecte.data_naixement}}</li>
-<li>Data Defuncio: {{arquitecte.data_defuncio}}</li>
-<li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
-</ul>
 
-{% if gratacels %}
-<h4>Gratacels construits:</h4>
-{% if gratacels %}
-<ol>
-{% for gratacel in gratacels %}
-<li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
-</li>
+
+<h1>Estils</h1>
+{% if estils %}
+<table>
+<thead>
+<tr><td>Nom</td><td>Any Inici</td><td>Any Final</td><tr>
+</thead>
+{% for estil in estils %}
+<tr>
+<td><a href="/estil/{{estil.idEstil}}"> {{estil.nom}}</a></td><td> {{estil.dataInici}}</td><td>{{estil.dataFi}}</td>
+</tr>
 {% endfor %}
-</ol>
+</table>
 {% else %}
-<p>No hi ha construit gratacels en aquest material.</p>
+<p>No hi ha estils a la base de dades</p>
 {% endif %}
-{% else %}
-<p>No ha construit gratacels.</p>
-{% endif %}
+
+
+      </div>
     </div>
     <div id="footer">
     	<p> Autors: David Hernández, David Canudes, Saida Javierre </p>
@@ -71,4 +66,3 @@
 
 </body>
 </html>
-

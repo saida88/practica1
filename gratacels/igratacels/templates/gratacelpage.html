@@ -38,28 +38,26 @@
         <div id="content">
 
 
-<h1>Dades del Arquitecte</h1>
+<h1>Dades del Gratacel {{ gratacel.nom }}</h1>
 <ul>
-<li>Nom: {{arquitecte.nom}}</li>
-<li>Cognom: {{arquitecte.cognom}}</li>
-<li>Data Naixement: {{arquitecte.data_naixement}}</li>
-<li>Data Defuncio: {{arquitecte.data_defuncio}}</li>
-<li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
+<li> Alçada: {{ gratacel.altura }}m </li>
+<li> Alçada Terrat: {{ gratacel.altura_terrat }}m </li>
+<li> Num Plantes: {{ gratacel.num_plantes }} </li>
+<li> Ciutat: {{ gratacel.ciutat }} </li>
+<li> Any Inici: {{ gratacel.any_inici }} </li>
+<li> Estil: {{ estils.nom }} </li>
+<li> Posicio del Ranquing Mundial: {{ gratacel.posicio_ranquing }} </li>
 </ul>
-
-{% if gratacels %}
-<h4>Gratacels construits:</h4>
-{% if gratacels %}
-<ol>
-{% for gratacel in gratacels %}
-<li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
-</li>
+<table>
+<thead style="font-style:italitc;">
+<tr><td>Nom Gratacels</td><td>Ciutat del Gratacels</td><td>Alçada Gratacels</td><tr>
+</thead>
+{% for arquitecte in arquitectes %}
+<tr>
+<td><a href="/gratacels/{{gratacel.idGratacel}}">{{arquitecte.nom}} </a></td><td> {{ arquitecte.cognom}} </td><td> {{ arquitecte.nacionalitat }}</td>
+</tr>
 {% endfor %}
-</ol>
-{% else %}
-<p>No hi ha construit gratacels en aquest material.</p>
-{% endif %}
+</table>
 {% else %}
 <p>No ha construit gratacels.</p>
 {% endif %}
@@ -71,4 +69,3 @@
 
 </body>
 </html>
-

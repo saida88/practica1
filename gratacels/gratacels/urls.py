@@ -17,7 +17,14 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', mainpage, name='home'),
-    url(r'^arquitecte/(\w+)/$', arquitectepage),
-    url(r'^estil/(\w+)/$', estilpage),
-    url(r'^material/(\w+)/$', materialpage),
+    url(r'^home', mainpage, name='home'),
+    #url(r'^gratacel/(\w+)$', gratacelpage),
+    #url(r'^gratacel/', gratacel_list),
+    url(r'^arquitecte/(\w+)$', arquitectepage),
+    url(r'^arquitecte/$', 'igratacels.views.arquitecte_list'),
+    url(r'^estil/(\w+)$', estilpage),
+    url(r'^estil/$', estil_list),
+    url(r'material/(\w+)/$', materialpage),
+    url(r'material/$', 'igratacels.views.material_list'),
+   
 )

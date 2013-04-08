@@ -36,19 +36,13 @@
         </div>
 		<div class="ic"></div>
         <div id="content">
-
-
-<h1>Dades del Arquitecte</h1>
+<h1>Dades del Estil {{estil.nom}}</h1>
 <ul>
-<li>Nom: {{arquitecte.nom}}</li>
-<li>Cognom: {{arquitecte.cognom}}</li>
-<li>Data Naixement: {{arquitecte.data_naixement}}</li>
-<li>Data Defuncio: {{arquitecte.data_defuncio}}</li>
-<li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
+<li>Any Inici: {{estil.dataInici}}</li>
+<li>Any Fi: {{estil.dataFi}}</li>
 </ul>
 
-{% if gratacels %}
-<h4>Gratacels construits:</h4>
+<h4>Gratacels construits amb el estil:</h4>
 {% if gratacels %}
 <ol>
 {% for gratacel in gratacels %}
@@ -58,10 +52,7 @@
 {% endfor %}
 </ol>
 {% else %}
-<p>No hi ha construit gratacels en aquest material.</p>
-{% endif %}
-{% else %}
-<p>No ha construit gratacels.</p>
+<p>No hi ha construit gratacels en aquest estil.</p>
 {% endif %}
     </div>
     <div id="footer">

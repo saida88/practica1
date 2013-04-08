@@ -38,17 +38,14 @@
         <div id="content">
 
 
-<h1>Dades del Arquitecte</h1>
+
+<h1>Dades del Material {{material.nom}}</h1>
 <ul>
-<li>Nom: {{arquitecte.nom}}</li>
-<li>Cognom: {{arquitecte.cognom}}</li>
-<li>Data Naixement: {{arquitecte.data_naixement}}</li>
-<li>Data Defuncio: {{arquitecte.data_defuncio}}</li>
-<li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
+<li>Dentitat: {{material.densitat}} kg/m3</li>
+<li>Cost: {{material.cost}} €</li>
 </ul>
 
-{% if gratacels %}
-<h4>Gratacels construits:</h4>
+<h4>Gratacels construits amb el material:</h4>
 {% if gratacels %}
 <ol>
 {% for gratacel in gratacels %}
@@ -59,9 +56,6 @@
 </ol>
 {% else %}
 <p>No hi ha construit gratacels en aquest material.</p>
-{% endif %}
-{% else %}
-<p>No ha construit gratacels.</p>
 {% endif %}
     </div>
     <div id="footer">
