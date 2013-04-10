@@ -16,7 +16,10 @@
 <body>
 <script type="text/javascript"> capPagina();</script>
 
+<img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
+
 <h1>Dades del Arquitecte</h1>
+
 <ul>
 <li>Nom: {{arquitecte.nom}}</li>
 <li>Cognom: {{arquitecte.cognom}}</li>
@@ -24,8 +27,6 @@
 <li>Data Defuncio: {{arquitecte.data_defuncio}}</li>
 <li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
 </ul>
-
-<img src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}"/>
 
 {% if gratacels %}
 <h4>Gratacels construits:</h4>

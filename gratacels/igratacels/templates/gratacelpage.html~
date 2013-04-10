@@ -16,6 +16,7 @@
 <body>
 <script type="text/javascript"> capPagina();</script>
 
+<img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
 
 <h1>Dades del Gratacel {{ gratacel.nom }}</h1>
 <ul>
@@ -45,7 +46,7 @@
 {% if materials %}
 <table>
 <thead>
-<tr><td>Nom Material</td>
+<tr><td>Materials Utilitzats</td>
 </thead>
 {% for material in materials %}
 <tr>
