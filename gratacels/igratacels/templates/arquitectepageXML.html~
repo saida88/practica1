@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
+	<meta name="description" content="Dades de gratacels" />
+	<meta name="robots" content="all" />
+	<title>Gratacels DataBase</title>
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE SYSTEM "exemple.dtd">
+
+</head>
+
+<body>
+
+<arquitecte>
+	<nomArquitecte>{{arquitecte.nom}}</nomArquitecte>
+	<cognomArquitecte>{{arquitecte.cognom}}</cognomArquitecte>
+	<dataNaixement>{{arquitecte.data_naixement}}</dataNaixement>
+	<dataDefuncio>{{arquitecte.data_defuncio}}</dataDefuncio>
+	<nacionalitat>{{arquitecte.nacionalitat}}</nacionalitat>
+</arquitecte>
+</body>
+</html>

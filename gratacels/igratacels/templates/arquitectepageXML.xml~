@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SYSTEM "exemple.dtd">
+<arquitecte>
+	<nomArquitecte>{{arquitecte.nom}}</nomArquitecte>
+	<cognomArquitecte>{{arquitecte.cognom}}</cognomArquitecte>
+	<dataNaixement>{{arquitecte.data_naixement}}</dataNaixement>
+	<dataDefuncio>{{arquitecte.data_defuncio}}</dataDefuncio>
+	<nacionalitat>{{arquitecte.nacionalitat}}</nacionalitat>
+</arquitecte>
+

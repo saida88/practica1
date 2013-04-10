@@ -15,22 +15,13 @@
 
 <body>
 <script type="text/javascript"> capPagina();</script>
-<h1>Dades del Estil {{estil.nom}}</h1>
-<ul>
-<li>Any Inici: {{estil.dataInici}}</li>
-<li>Any Fi: {{estil.dataFi}}</li>
-</ul>
+<html>
+<head>
+<title>{{ username }} Gratacels</title>
+</head>
+<body>
+<h1>Usuari {{ username }}</h1>
 
-<h4>Gratacels construits amb el estil:</h4>
-{% if gratacels %}
-<ol>
-{% for gratacel in gratacels %}
-<li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
-</li>
-{% endfor %}
-</ol>
-{% else %}
-<p>No hi ha construit gratacels en aquest estil.</p>
-{% endif %}
+</body>
+</html>
 <script type="text/javascript"> peuPagina();</script>

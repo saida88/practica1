@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>{{ username }} Gratacels</title>
+</head>
+<body>
+<h1>Usuari {{ username }}</h1>
+
+</body>
+</html>
+

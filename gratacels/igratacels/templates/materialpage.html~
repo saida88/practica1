@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
+	<meta name="description" content="Dades de gratacels" />
+	<meta name="robots" content="all" />
+	<title>Gratacels DataBase</title>
+
+	<script type="text/javascript"></script>
+	
+	<style type="text/css" title="./currentStyle" media="all">
+		@import "/static/global.css";
+	</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div id="head">
+        <img class="header_image" src="/static/img/header_image.jpg" alt="Header image" />
+    	<img class="icon" src="/static/img/logo.jpg" alt="Logo" />
+    	<h1>Gratacels</h1>
+        <h2>DataBase</h2>
+    </div>
+    <div id="main">
+    	<div id="navi">
+        	<ul>
+            	<li><a class="selected" href="//127.0.0.1:8000/home">Home</a></li>
+            	<li><a href="//127.0.0.1:8000/gratacel">Gratacels</a></li>
+            	<li><a href="//127.0.0.1:8000/arquitecte">Arquitectes</a></li>
+            	<li><a href="//127.0.0.1:8000/estil">Estils</a></li>
+            	<li><a href="//127.0.0.1:8000/material">Materials</a></li>
+        </div>
+		<div class="ic"></div>
+        <div id="content">
+
+
+
+<h1>Dades del Material {{material.nom}}</h1>
+<ul>
+<li>Dentitat: {{material.densitat}} kg/m3</li>
+<li>Cost: {{material.cost}} €</li>
+</ul>
+
+<h4>Gratacels construits amb el material:</h4>
+{% if gratacels %}
+<ol>
+{% for gratacel in gratacels %}
+<li>
+{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No hi ha construit gratacels en aquest material.</p>
+{% endif %}
+    </div>
+    <div id="footer">
+    	<p> Autors: David Hernández, David Canudes, Saida Javierre </p>
+    </div>
+</div>
+
+</body>
+</html>
+

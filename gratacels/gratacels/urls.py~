@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^home', mainpage, name='home'),
     url(r'^gratacel/(\w+)$', gratacelpage),
     url(r'^gratacel/', gratacel_list),
-    url(r'^arquitecte/(\w+)/format=xml$', arquitectepageXML),
+    url(r'^arquitecte\?format=xml$', arquitectepageXML),
     url(r'^arquitecte/(\w+)', arquitectepage),
 
     url(r'^arquitecte/$', 'igratacels.views.arquitecte_list'),

@@ -15,22 +15,20 @@
 
 <body>
 <script type="text/javascript"> capPagina();</script>
-<h1>Dades del Estil {{estil.nom}}</h1>
-<ul>
-<li>Any Inici: {{estil.dataInici}}</li>
-<li>Any Fi: {{estil.dataFi}}</li>
-</ul>
 
-<h4>Gratacels construits amb el estil:</h4>
-{% if gratacels %}
-<ol>
-{% for gratacel in gratacels %}
-<li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
-</li>
+<h1>Materials</h1>
+{% if materials %}
+<table>
+<thead>
+<tr><td>Nom</td><td>Densitat</td><td>Cost</td><tr>
+</thead>
+{% for material in materials %}
+<tr>
+<td><a href="/material/{{material.idMaterial}}"> {{material.nom}}</a></td><td> {{material.densitat}} kg/m3</td><td>{{material.cost}} €</td>
+</tr>
 {% endfor %}
-</ol>
+</table>
 {% else %}
-<p>No hi ha construit gratacels en aquest estil.</p>
+<p>No hi ha materials a la base de dades</p>
 {% endif %}
 <script type="text/javascript"> peuPagina();</script>

@@ -45,7 +45,7 @@
 {% if materials %}
 <table>
 <thead>
-<tr><td>Materials Utilitzats</td>
+<tr><td>Nom Material</td>
 </thead>
 {% for material in materials %}
 <tr>
