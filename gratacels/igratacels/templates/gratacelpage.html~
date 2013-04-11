@@ -29,9 +29,9 @@
 <li> Posicio del Ranquing Mundial: {{ gratacel.posicio_ranquing }} </li>
 </ul>
 {% if arquitectes %}
+<h2>Arquitectes:</h2>
 <table>
 <thead>
-<h2>Arquitectes:</h2>
 <tr><td>Nom</td><td>Nacionalitat</td><tr>
 </thead>
 {% for arquitecte in arquitectes %}
@@ -48,7 +48,9 @@
 
 <h2>Materials utilitzats:</h2>
 <table>
+<thead>
 <tr><td>Nom</td>
+</thead>
 {% for material in materials %}
 <tr>
 <td><a href="/material/{{material.idMaterial}}">{{material.nom}} </a></td>

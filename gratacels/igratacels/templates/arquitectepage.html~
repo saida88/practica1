@@ -28,7 +28,7 @@
 <li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
 </ul>
 
-{% if gratacels %}
+
 <h2>Gratacels construits:</h2>
 {% if gratacels %}
 <ol>
@@ -38,9 +38,6 @@
 </li>
 {% endfor %}
 </ol>
-{% else %}
-<p>No hi ha construit gratacels en aquest material.</p>
-{% endif %}
 {% else %}
 <p>No ha construit gratacels.</p>
 {% endif %}

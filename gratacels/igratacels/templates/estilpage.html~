@@ -21,7 +21,7 @@
 <li>Any Fi: {{estil.dataFi}}</li>
 </ul>
 
-<h4>Gratacels construits amb el estil:</h4>
+<h2>Gratacels construits amb el estil:</h2>
 {% if gratacels %}
 <ol>
 {% for gratacel in gratacels %}

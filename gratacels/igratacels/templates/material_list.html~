@@ -1,11 +1,11 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Llista de materials" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase</title>
+	<title>Gratacels DataBase: Llista de materials</title>
 
 	<style type="text/css" title="./currentStyle" media="all">
 		@import "/static/global.css";
