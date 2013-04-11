@@ -27,10 +27,16 @@ def gratacelpage(request, idGratacel):
 	except:
 		raise Http404('Gratacel no trobat')
 
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('gatacelpage.xml')
+	elif parametre =="JSON":
+		template = get_template('gratacelpageJSON.html')	
+	else:
+		template = get_template('gratacelpage.html')
 	arquitectes = gratacel.arquitectes.all()
 	materials = gratacel.materials.all()
 	estils = Estil.objects.get(idEstil=gratacel.idEstil_id)
-	template = get_template('gratacelpage.html')
 	variables = Context({
 		'gratacel': gratacel,
 		'arquitectes': arquitectes,
@@ -46,7 +52,14 @@ def gratacel_list(request):
 	except:
 		raise Http404('Materials no trobats')
 
-	template = get_template('gratacel_list.html')
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('gratacel_list.xml')
+	elif parametre =="JSON":
+		template = get_template('gratacel_listJSON.html')	
+	else:
+		template = get_template('gratacel_list.html')
+
 	variables = Context({
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
@@ -59,28 +72,19 @@ def gratacel_list(request):
 def arquitectepage(request, idArquitecte):
 
 	try:
-		arquitecte =Arquitecte.objects.get(idArquitecte=idArquitecte)
+		arquitecte = Arquitecte.objects.get(idArquitecte=idArquitecte)
 	except:
 		raise Http404('Arquitecte no trobat')
 
-	gratacels=arquitecte.gratacel_set.all()
-	template = get_template('arquitectepage.html')
-	variables = Context({
-		'arquitecte': arquitecte,
-		'gratacels': gratacels
-		})
-	output = template.render(variables)
-	return HttpResponse(output)
-
-def arquitectepageXML(request, idArquitecte):
-
-	try:
-		arquitecte =Arquitecte.objects.get(idArquitecte=idArquitecte)
-	except:
-		raise Http404('Arquitecte no trobat')
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('arquitectepage.xml')
+	elif parametre =="JSON":
+		template = get_template('arquitectepageJSON.html')	
+	else:
+		template = get_template('arquitectepage.html')
 
 	gratacels=arquitecte.gratacel_set.all()
-	template = get_template('arquitectepageXML.xml')
 	variables = Context({
 		'arquitecte': arquitecte,
 		'gratacels': gratacels
@@ -94,9 +98,15 @@ def estilpage(request, idEstil):
 		estil = Estil.objects.get(idEstil=idEstil)
 	except:
 		raise Http404('Estil no trobat')
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('estilpage.xml')
+	elif parametre =="JSON":
+		template = get_template('estilpageJSON.html')	
+	else:
+		template = get_template('estilpage.html')
 
-	gratacels=estil.gratacel_set.all()
-	template = get_template('estilpage.html')
+	gratacels=estil.gratacel_set.all()	
 	variables = Context({
 		'estil': estil,
 		'gratacels': gratacels
@@ -110,9 +120,16 @@ def materialpage(request, idMaterial):
 		material = Material.objects.get(idMaterial=idMaterial)
 	except:
 		raise Http404('Material no trobat')
-
+	
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('materialpage.xml')
+	elif parametre =="JSON":
+		template = get_template('materialJSON.html')	
+	else:
+		template = get_template('materialpage.html')
 	gratacels=material.gratacel_set.all()
-	template = get_template('materialpage.html')
+	
 	variables = Context({
 		'material': material,
 		'gratacels': gratacels
@@ -126,7 +143,15 @@ def arquitecte_list(request):
 	except:
 		raise Http404('Arquitectes no trobats')
 
-	template = get_template('arquitecte_list.html')
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('arquitecte_list.xml')
+	elif parametre =="JSON":
+		template = get_template('arquitecte_listJSON.html')	
+	else:
+		template = get_template('arquitecte_list.html')
+	
+	
 	variables = Context({
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
@@ -142,7 +167,15 @@ def material_list(request):
 	except:
 		raise Http404('Materials no trobats')
 
-	template = get_template('material_list.html')
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('material_list.xml')
+	elif parametre =="JSON":
+		template = get_template('material_listJSON.html')	
+	else:
+		template = get_template('material_list.html')
+
+	
 	variables = Context({
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
@@ -158,7 +191,15 @@ def estil_list(request):
 	except:
 		raise Http404('Materials no trobats')
 
-	template = get_template('estil_list.html')
+	parametre = request.GET.get('format','')
+	if parametre =="XML":
+		template = get_template('estil_list.xml')
+	elif parametre =="JSON":
+		template = get_template('estil_listJSON.html')	
+	else:
+		template = get_template('estil_list.html')
+
+	
 	variables = Context({
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
@@ -174,16 +215,26 @@ def userpage(request, username):
 		user = User.objects.get(username=username)
 	except:
 		raise Http404('User not found.')
+	
 	template = get_template('userpage.html')
 	variables = Context({
-		#'username': username,
+		'username': username,
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
 
-
-	
-
+#def login(request):	
+#	if request.method== 'POST':
+#		formulario= AutentificationForm (request.POST)
+#		if formulario.is_valid:
+#			usuario = request.POST['username']
+#			clave = request.POSR['password']
+#			acceso = authentificate(username=usuario, password=clave)
+#			if acceso.is_active:
+#				login(request, acceso)
+#				template=get_template('userpage.html')
+#			else:
+#				template=get_template('login.html')
 
 #def arquitectemain(request):
 #
