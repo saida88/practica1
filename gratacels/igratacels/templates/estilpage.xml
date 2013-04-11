@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SYSTEM "exemple.dtd">
+{% if estil %}	
+<estil>
+	<idEstil>{{ estil.idEstil }}</idEstil>
+	<nomEstil>{{ estil.nom }}</nomEstil>
+	<anyIniciEstil>{{ estil.dataInici }}</anyIniciEstil>
+	<anyFiEstil>{{ estil.dataFi }}</anyFiEstil>
+	{% if gratacels %}
+		<gratacels>
+		{% for gratacel in gratacels %}
+		<gratacel>
+			<idGratacel>{{gratacel.idGratacel}}</idGratacel>
+			<nomGratacel>{{gratacel.nom}}</nomGratacel>
+			<altura>{{ gratacel.altura }}</altura>
+			<alturaTerrat>{{ gratacel.altura_terrat }}</alturaTerrat>
+			<numPlantes>{{ gratacel.num_plantes }}</numPlantes>
+			<ciutat>{{ gratacel.ciutat }}</ciutat>
+			<anyGratacel>{{ gratacel.any_inici }}</anyGratacel>
+			<posicioRanquing>{{ gratacel.posicio_ranquing }}</posicioRanquing>
+			<fotoGratacel>{{gratacel.imatge}}</fotoGratacel>
+			</gratacel>
+		{% endfor %}
+		</gratacels>
+	{% endif %}
+</estil>
+{% endif %}

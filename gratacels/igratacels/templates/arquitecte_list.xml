@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SYSTEM "exemple.dtd">
+
+{% if arquitectes %}
+<arquitectes>
+{% for arquitecte in arquitectes %}
+<arquitecte>
+	<idArquitecte>{{arquitecte.idArquitecte}}</idArquitecte>
+	<nomArquitecte>{{arquitecte.nom}}</nomArquitecte>
+	<cognomArquitecte>{{arquitecte.cognom}}</cognomArquitecte>
+	<dataNaixement>{{arquitecte.data_naixement}}</dataNaixement>
+	<dataDefuncio>{{arquitecte.data_defuncio}}</dataDefuncio>
+	<nacionalitat>{{arquitecte.nacionalitat}}</nacionalitat>
+	<fotoArquitecte>{{arquitecte.imatge}}</fotoArquitecte>
+</arquitecte>
+{% endfor %}
+</arquitectes>
+{% endif %}

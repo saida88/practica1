@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
+	<meta name="description" content="Dades de gratacels" />
+	<meta name="robots" content="all" />
+	<title>Gratacels DataBase</title>
+
+</head>
+
+<body>
+{% if gratacel %}
+<gratacel>
+	<idGratacel>{{gratacel.idGratacel}}</idGratacel>
+	<nomGratacel>{{gratacel.nom}}</<nomGratacel>
+	<altura>{{ gratacel.altura }}</altrura>
+	<alturaTerrat>{{ gratacel.altura_terrat }}</alturaTerrat>
+	<numPlantes>{{ gratacel.num_plantes }}</numPlantes>
+	<ciutat>{{ gratacel.ciutat }}</ciutat>
+	<anyGratacel>{{ gratacel.any_inici }}</anyGratacel>
+	<posicioRanquing>{{ gratacel.posicio_ranquing }}</posicioRanquing>
+	<fotoGratacel>{{gratacel.imatge}}</fotoGratacel>
+	{% if estils %}	
+		<estil>
+			<idEstil>{{ estils.idEstil }}</idEstil>
+			<nomEstil>{{ estils.nom }}</nomEstil>
+			<anyIniciEstil>{{ estils.dataInici }}</anyIniciEstil>
+			<anyFiEstil>{{ estils.dataFi }}</anyFiEstil>
+		</etil>
+	{% endif %}
+
+	{% if arquitectes %}
+		<arquitectes>
+		{% for arquitecte in arquitectes %}
+		<arquitecte>
+			<idArquitecte>{{arquitecte.idArquitecte}}</idArquitecte>
+			<nomArquitecte>{{arquitecte.nom}}</nomArquitecte>
+			<cognomArquitecte>{{arquitecte.cognom}}</cognomArquitecte>
+			<dataNaixement>{{arquitecte.data_naixement}}</dataNaixement>
+			<dataDefuncio>{{arquitecte.data_defuncio}}</dataDefuncio>
+			<nacionalitat>{{arquitecte.nacionalitat}}</nacionalitat>
+			<fotoArquitecte>{{arquitecte.imatge}}</fotoArquitecte>
+		</arquitecte>
+		{% endfor %}
+	</arquitectes>
+	{% endif %}
+
+	{% if materilas %}
+		<materilas>
+		{% for material in materials %}
+		<material>
+			<idMaterial>{{material.idMaterial}}</idMaterial>
+			<nomMaterial>{{material.nom}}</nomMaterial>
+			<cost>{{material.cost}}</cost>
+			<densitat>{{material.densitat}}</densitat>
+		</material>
+		{% endfor %}
+		</materials>
+	{% endif %}
+</gratacel>
+{% endif %}
+</body></html>
