@@ -31,7 +31,7 @@
 {% if arquitectes %}
 <table>
 <thead>
-<h4>Arquitectes:</h4>
+<h2>Arquitectes:</h2>
 <tr><td>Nom</td><td>Nacionalitat</td><tr>
 </thead>
 {% for arquitecte in arquitectes %}
@@ -45,11 +45,10 @@
 {% endif %}
 
 {% if materials %}
+
+<h2>Materials utilitzats:</h2>
 <table>
-<thead>
-<h4>Materials utilitzats</h4>
 <tr><td>Nom</td>
-</thead>
 {% for material in materials %}
 <tr>
 <td><a href="/material/{{material.idMaterial}}">{{material.nom}} </a></td>

@@ -24,12 +24,12 @@
 <li>Cost: {{material.cost}} €</li>
 </ul>
 
-<h4>Gratacels construits amb el material:</h4>
+<h2>Gratacels construits amb el material:</h2>
 {% if gratacels %}
 <ol>
 {% for gratacel in gratacels %}
 <li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
+<a href="/gratacel/{{gratacel.idGratacel}}">{{gratacel.nom}}</a> - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
 </li>
 {% endfor %}
 </ol>

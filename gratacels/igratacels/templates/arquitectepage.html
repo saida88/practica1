@@ -28,19 +28,16 @@
 <li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
 </ul>
 
-{% if gratacels %}
-<h4>Gratacels construits:</h4>
+
+<h2>Gratacels construits:</h2>
 {% if gratacels %}
 <ol>
 {% for gratacel in gratacels %}
 <li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
+<a href="/gratacel/{{gratacel.idGratacel}}">{{gratacel.nom}}</a> - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
 </li>
 {% endfor %}
 </ol>
-{% else %}
-<p>No hi ha construit gratacels en aquest material.</p>
-{% endif %}
 {% else %}
 <p>No ha construit gratacels.</p>
 {% endif %}

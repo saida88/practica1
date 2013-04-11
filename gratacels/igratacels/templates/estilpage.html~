@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
@@ -26,7 +26,7 @@
 <ol>
 {% for gratacel in gratacels %}
 <li>
-{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
+<a href="/gratacel/{{gratacel.idGratacel}}">{{gratacel.nom}}</a> - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
 </li>
 {% endfor %}
 </ol>

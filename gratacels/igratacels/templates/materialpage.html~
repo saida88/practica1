@@ -6,20 +6,35 @@
 	<meta name="description" content="Dades de gratacels" />
 	<meta name="robots" content="all" />
 	<title>Gratacels DataBase</title>
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE SYSTEM "exemple.dtd">
 
+	<style type="text/css" title="./currentStyle" media="all">
+		@import "/static/global.css";
+	</style>
+	<script type="text/javascript" src="/static/myJs.js"></script>
 </head>
 
 <body>
-	{% if material %}	
-		<material>
-			<idMaterial>{{material.idMaterial}}</idMaterial>
-			<nomMaterial>{{material.nom}}</nomMaterial>
-			<cost>{{material.cost}}</cost>
-			<densitat>{{material.densitat}}</densitat>
-		</material>
-	{% endif %}
-</body>
-</html>
+<script type="text/javascript"> capPagina();</script>
+
+
+
+<h1>Dades del Material {{material.nom}}</h1>
+<ul>
+<li>Dentitat: {{material.densitat}} kg/m3</li>
+<li>Cost: {{material.cost}} €</li>
+</ul>
+
+<h2>Gratacels construits amb el material:</h2>
+{% if gratacels %}
+<ol>
+{% for gratacel in gratacels %}
+<li>
+<a href="/gratacel/{{gratacel.idGratacel}}">{{gratacel.nom}}</a> - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No hi ha construit gratacels en aquest material.</p>
+{% endif %}
+<script type="text/javascript"> peuPagina();</script>
 
