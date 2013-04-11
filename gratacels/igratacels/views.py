@@ -29,7 +29,7 @@ def gratacelpage(request, idGratacel):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('gatacelpageXML.html')
+		template = get_template('gratacelpage.xml')
 	elif parametre =="JSON":
 		template = get_template('gratacelpageJSON.html')	
 	else:
@@ -54,7 +54,7 @@ def gratacel_list(request):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('gratacel_listXML.html')
+		template = get_template('gratacel_list.xml')
 	elif parametre =="JSON":
 		template = get_template('gratacel_listJSON.html')	
 	else:
@@ -78,7 +78,7 @@ def arquitectepage(request, idArquitecte):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('arquitectepageXML.html')
+		template = get_template('arquitectepage.xml')
 	elif parametre =="JSON":
 		template = get_template('arquitectepageJSON.html')	
 	else:
@@ -100,7 +100,7 @@ def estilpage(request, idEstil):
 		raise Http404('Estil no trobat')
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('estilpageXML.html')
+		template = get_template('estilpage.xml')
 	elif parametre =="JSON":
 		template = get_template('estilpageJSON.html')	
 	else:
@@ -123,7 +123,7 @@ def materialpage(request, idMaterial):
 	
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('materialpageXML.html')
+		template = get_template('materialpage.xml')
 	elif parametre =="JSON":
 		template = get_template('materialJSON.html')	
 	else:
@@ -145,7 +145,7 @@ def arquitecte_list(request):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('arquitecte_listXML.html')
+		template = get_template('arquitecte_list.xml')
 	elif parametre =="JSON":
 		template = get_template('arquitecte_listJSON.html')	
 	else:
@@ -169,7 +169,7 @@ def material_list(request):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('material_listXML.html')
+		template = get_template('material_list.xml')
 	elif parametre =="JSON":
 		template = get_template('material_listJSON.html')	
 	else:
@@ -193,7 +193,7 @@ def estil_list(request):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('estil_listXML.html')
+		template = get_template('estil_list.xml')
 	elif parametre =="JSON":
 		template = get_template('estil_listJSON.html')	
 	else:
@@ -215,7 +215,7 @@ def userpage(request, username):
 		user = User.objects.get(username=username)
 	except:
 		raise Http404('User not found.')
-
+	
 	template = get_template('userpage.html')
 	variables = Context({
 		'username': username,
@@ -223,9 +223,18 @@ def userpage(request, username):
 	output = template.render(variables)
 	return HttpResponse(output)
 
-
-	
-
+#def login(request):	
+#	if request.method== 'POST':
+#		formulario= AutentificationForm (request.POST)
+#		if formulario.is_valid:
+#			usuario = request.POST['username']
+#			clave = request.POSR['password']
+#			acceso = authentificate(username=usuario, password=clave)
+#			if acceso.is_active:
+#				login(request, acceso)
+#				template=get_template('userpage.html')
+#			else:
+#				template=get_template('login.html')
 
 #def arquitectemain(request):
 #

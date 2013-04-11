@@ -6,21 +6,24 @@
 	<meta name="description" content="Dades de gratacels" />
 	<meta name="robots" content="all" />
 	<title>Gratacels DataBase</title>
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE SYSTEM "exemple.dtd">
-
 </head>
 
 <body>
-{% if arquitecte %}
+
+{% if arquitectes %}
+<arquitectes>
+{% for arquitecte in arquitectes %}
 <arquitecte>
-	<idArquitecte>{{arquitecte.idArquitecte}}</idArquitecte>
 	<nomArquitecte>{{arquitecte.nom}}</nomArquitecte>
 	<cognomArquitecte>{{arquitecte.cognom}}</cognomArquitecte>
 	<dataNaixement>{{arquitecte.data_naixement}}</dataNaixement>
 	<dataDefuncio>{{arquitecte.data_defuncio}}</dataDefuncio>
 	<nacionalitat>{{arquitecte.nacionalitat}}</nacionalitat>
 </arquitecte>
+<br/>
+{% endfor %}
+</arquitectes>
+{% else %}
+
 {% endif %}
-</body>
-</html>
+</body></html>

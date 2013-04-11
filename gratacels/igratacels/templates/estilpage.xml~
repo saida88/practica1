@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SYSTEM "exemple.dtd">
+{% if estil %}	
+<estil>
+	<idEstil>{{ estil.idEstil }}</idEstil>
+	<nomEstil>{{ estil.nom }}</nomEstil>
+	<anyIniciEstil>{{ estil.dataInici }}</anyIniciEstil>
+	<anyFiEstil>{{ estil.dataFi }}</anyFiEstil>
+</estil>
+{% endif %}

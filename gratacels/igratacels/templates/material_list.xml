@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SYSTEM "exemple.dtd">
+{% if materials %}
+<materials>
+	{% for material in materials %}
+	<material>
+		<idMaterial>{{material.idMaterial}}</idMaterial>
+		<nomMaterial>{{material.nom}}</nomMaterial>
+		<cost>{{material.cost}}</cost>
+		<densitat>{{material.densitat}}</densitat>
+	</material>
+	{% endfor %}
+</materials>
+{% endif %}

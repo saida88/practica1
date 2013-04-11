@@ -36,32 +36,5 @@
         </div>
 		<div class="ic"></div>
         <div id="content">
-       	  <div class="teaser">
-            <img src="/static/img/teaser_image.jpg" alt="Teaser image" />
-            	<h2>Aplicació web sobre gratacels</h2>
-              <p>Aplicació que permet obtenir dades sobre gratacels, els arquitectes que els han construit, l'estil arquitectònic i els materials utilitzats.</p>
-            </div>
-            <h2>Desarrollo de aplicación web bàsica.</h2>
-            <p>A partir del caso que habeis propuesto, y solo en caso de que el profesorado os haya comunicado que es correcto:
-	       Desarrollar, usando Django, una aplicación web básica de acceso a datos (siguiendo el modelo de datos propuesto).
-	       La aplicación ha de:
-	       <ul>1. Permitir listar todas las entidades que forman parte del modelo de datos propuesto.</ul>
-	       <ul>2. Acceder a los datos individuales de cada instancia de cada una de las entidades.</ul>
-	       <ul>3. Obtener estos datos en 3 representaciones diferentes:
-	       <ul>a. HTML (web “legible” por el usuario, usando templates).</ul>
-	       <ul>b. JSON</ul>
-	       <ul>c. XML</ul></ul>
-	       <ul>4. Todas estas operaciones (listados y acceso individual a cada instancia) deben ser
-		   rutas de un API RESTful.</ul>
-	       <ul>5. Activar la interfaz admin de Django para añadir, modificar y eliminar instáncias.</ul>
-	       <ul>6. Añadir autenticación y gestión de usuarios (builtin de Django).</ul>
-	    </p>
-      </div>
-    </div>
-    <div id="footer">
-    	<p> Autors: David Hernández, David Canudes, Saida Javierre </p>
-    </div>
-</div>
+       	  
 
-</body>
-</html>
