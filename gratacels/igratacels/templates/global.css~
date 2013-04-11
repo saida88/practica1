@@ -176,8 +176,6 @@ a:hover {
 	padding:0;
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
-	font-size:12px;
-	color:#558c8c;
 }
 
 #content ul {
@@ -185,6 +183,13 @@ a:hover {
 }
 
 #fotoarquitecte {
+	float:right;
+	margin-right:10px;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+#fotogratacel {
 	float:right;
 	margin-right:10px;
 	margin-top:5px;

@@ -31,11 +31,12 @@
 {% if arquitectes %}
 <table>
 <thead>
-<tr><td>Nom Arquitecte</td><td>Cognom Arquitecte</td><td>Nacionalitat</td><tr>
+<h2>Arquitectes:</h2>
+<tr><td>Nom</td><td>Nacionalitat</td><tr>
 </thead>
 {% for arquitecte in arquitectes %}
 <tr>
-<td><a href="/arquitecte/{{arquitecte.idArquitecte}}">{{arquitecte.nom}} </a></td><td> {{ arquitecte.cognom}} </td><td> {{ arquitecte.nacionalitat }}</td>
+<td><a href="/arquitecte/{{arquitecte.idArquitecte}}">{{arquitecte.cognom}}, {{arquitecte.nom}} </a></td><td> {{ arquitecte.nacionalitat }}</td>
 </tr>
 {% endfor %}
 </table>
@@ -46,7 +47,8 @@
 {% if materials %}
 <table>
 <thead>
-<tr><td>Materials Utilitzats</td>
+<h2>Materials utilitzats</h2>
+<tr><td>Nom</td>
 </thead>
 {% for material in materials %}
 <tr>
