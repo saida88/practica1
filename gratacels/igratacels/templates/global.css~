@@ -191,13 +191,6 @@ a:hover {
 	margin-bottom:10px;
 }
 
-#fotogratacel {
-	float:right;
-	margin-right:10px;
-	margin-top:5px;
-	margin-bottom:10px;
-}
-
 #footer {
 	float:left;
 	width:1000px;
