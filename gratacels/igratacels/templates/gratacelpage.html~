@@ -32,7 +32,7 @@
 <h2>Arquitectes:</h2>
 <table>
 <thead>
-<tr><td>Nom</td><td>Nacionalitat</td><tr>
+<tr><td>Nom</td><td>Nacionalitat</td></tr>
 </thead>
 {% for arquitecte in arquitectes %}
 <tr>
@@ -61,3 +61,5 @@
 <p>No te materials associats.</p>
 {% endif %}
 <script type="text/javascript"> peuPagina();</script>
+</body>
+</html>

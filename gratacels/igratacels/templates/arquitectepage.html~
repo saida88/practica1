@@ -42,4 +42,5 @@
 <p>No ha construit gratacels.</p>
 {% endif %}
 <script type="text/javascript"> peuPagina();</script>
-
+<body>
+</html>

@@ -32,3 +32,4 @@
 <p>No hi ha arquitectes a la base de dades</p>
 {% endif %}
 <script type="text/javascript"> peuPagina();</script>
+</html>

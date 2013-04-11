@@ -3,5 +3,5 @@ function capPagina(){
 }
 
 function peuPagina(){
-	document.write('</div><div id="footer"><p> Autors: David Hernández, David Canudes, Saida Javierre </p></div></div></body></html>');
+	document.write('</div><div id="footer"><p> Autors: David Hernández, David Canudes, Saida Javierre </p></div></div>');
 }

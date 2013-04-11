@@ -32,3 +32,5 @@
 <p>No hi ha gratacels a la base de dades</p>
 {% endif %}
 <script type="text/javascript"> peuPagina();</script>
+</body>
+</html>
