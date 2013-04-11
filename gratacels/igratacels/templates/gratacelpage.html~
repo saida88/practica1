@@ -3,9 +3,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
-	<meta name="description" content="Dades de gratacels" />
+	<meta name="description" content="Dades de gratacel" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase</title>
+	<title>Gratacels DataBase: Dades de gratacel</title>
 
 	<style type="text/css" title="./currentStyle" media="all">
 		@import "/static/global.css";
@@ -16,7 +16,7 @@
 <body>
 <script type="text/javascript"> capPagina();</script>
 
-<img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
+<img id="fotogratacel" src="/static/img/{{gratacel.imatge}}" alt="fotografia del gratacel {{gratacel.nom}}" />
 
 <h1>Dades del Gratacel {{ gratacel.nom }}</h1>
 <ul>

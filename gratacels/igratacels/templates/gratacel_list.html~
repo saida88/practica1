@@ -3,9 +3,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
-	<meta name="description" content="Dades de gratacels" />
+	<meta name="description" content="Llista de gratacels" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase</title>
+	<title>Gratacels DataBase: Llista de gratacels</title>
 
 	<style type="text/css" title="./currentStyle" media="all">
 		@import "/static/global.css";
@@ -24,7 +24,7 @@
 </thead>
 {% for gratacel in gratacels %}
 <tr>
-<td><a href="/gratacels/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}} </td>
+<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}} </td>
 </tr>
 {% endfor %}
 </table>
