@@ -31,7 +31,7 @@ def gratacelpage(request, idGratacel):
 	if parametre =="XML":
 		template = get_template('gratacelpage.xml')
 	elif parametre =="JSON":
-		template = get_template('gratacelpageJSON.html')	
+		template = get_template('gratacelpage.js')	
 	else:
 		template = get_template('gratacelpage.html')
 	arquitectes = gratacel.arquitectes.all()
@@ -56,7 +56,7 @@ def gratacel_list(request):
 	if parametre =="XML":
 		template = get_template('gratacel_list.xml')
 	elif parametre =="JSON":
-		template = get_template('gratacel_listJSON.html')	
+		template = get_template('gratacel_list.js')	
 	else:
 		template = get_template('gratacel_list.html')
 
@@ -80,7 +80,7 @@ def arquitectepage(request, idArquitecte):
 	if parametre =="XML":
 		template = get_template('arquitectepage.xml')
 	elif parametre =="JSON":
-		template = get_template('arquitectepageJSON.html')	
+		template = get_template('arquitectepage.js')	
 	else:
 		template = get_template('arquitectepage.html')
 
@@ -102,7 +102,7 @@ def estilpage(request, idEstil):
 	if parametre =="XML":
 		template = get_template('estilpage.xml')
 	elif parametre =="JSON":
-		template = get_template('estilpageJSON.html')	
+		template = get_template('estilpage.js')	
 	else:
 		template = get_template('estilpage.html')
 
@@ -125,7 +125,7 @@ def materialpage(request, idMaterial):
 	if parametre =="XML":
 		template = get_template('materialpage.xml')
 	elif parametre =="JSON":
-		template = get_template('materialJSON.html')	
+		template = get_template('materialpage.js')	
 	else:
 		template = get_template('materialpage.html')
 	gratacels=material.gratacel_set.all()
@@ -147,7 +147,7 @@ def arquitecte_list(request):
 	if parametre =="XML":
 		template = get_template('arquitecte_list.xml')
 	elif parametre =="JSON":
-		template = get_template('arquitecte_listJSON.html')	
+		template = get_template('arquitecte_list.js')	
 	else:
 		template = get_template('arquitecte_list.html')
 	
@@ -171,7 +171,7 @@ def material_list(request):
 	if parametre =="XML":
 		template = get_template('material_list.xml')
 	elif parametre =="JSON":
-		template = get_template('material_listJSON.html')	
+		template = get_template('material_list.js')	
 	else:
 		template = get_template('material_list.html')
 
@@ -195,7 +195,7 @@ def estil_list(request):
 	if parametre =="XML":
 		template = get_template('estil_list.xml')
 	elif parametre =="JSON":
-		template = get_template('estil_listJSON.html')	
+		template = get_template('estil_list.js')	
 	else:
 		template = get_template('estil_list.html')
 
