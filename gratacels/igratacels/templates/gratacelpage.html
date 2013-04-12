@@ -5,7 +5,7 @@
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Dades de gratacel" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase: Dades de gratacel</title>
+	<title>Gratacels DataBase: {{gratacel.nom}}</title>
 
 	<style type="text/css" title="./currentStyle" media="all">
 		@import "/static/global.css";
@@ -25,7 +25,7 @@
 <li> Num Plantes: {{ gratacel.num_plantes }} </li>
 <li> Ciutat: {{ gratacel.ciutat }} </li>
 <li> Any Inici: {{ gratacel.any_inici }} </li>
-<li> Estil: {{ estils.nom }} </li>
+<li> Estil: <a href="/estil/{{estils.idEstil}}">{{ estils.nom }} </a></li>
 <li> Posicio del Ranquing Mundial: {{ gratacel.posicio_ranquing }} </li>
 </ul>
 {% if arquitectes %}
