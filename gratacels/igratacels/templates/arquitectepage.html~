@@ -5,7 +5,7 @@
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Dades de l'arquitecte" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase: Dades de l'arquitecte</title>
+	<title>Gratacels DataBase: {{arquitecte.cognom}}, {{arquitecte.nom}}</title>
 
 	<style type="text/css" title="./currentStyle" media="all">
 		@import "/static/global.css";
@@ -42,5 +42,5 @@
 <p>No ha construit gratacels.</p>
 {% endif %}
 <script type="text/javascript"> peuPagina();</script>
-<body>
+</body>
 </html>
