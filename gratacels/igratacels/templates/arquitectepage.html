@@ -1,21 +1,13 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+{% extends "base.html"%}
+
+{% block head %}
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Dades de l'arquitecte" />
 	<meta name="robots" content="all" />
 	<title>Gratacels DataBase: {{arquitecte.cognom}}, {{arquitecte.nom}}</title>
-
-	<style type="text/css" title="./currentStyle" media="all">
-		@import "/static/global.css";
-	</style>
-	<script type="text/javascript" src="/static/myJs.js"></script>
-</head>
-
-<body>
-<script type="text/javascript"> capPagina();</script>
-
+{% endblock %}
+{% block content %}
+	
 <img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
 
 <h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}}</h1>
@@ -41,6 +33,4 @@
 {% else %}
 <p>No ha construit gratacels.</p>
 {% endif %}
-<script type="text/javascript"> peuPagina();</script>
-</body>
-</html>
+{% endblock %}

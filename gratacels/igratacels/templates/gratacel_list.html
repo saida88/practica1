@@ -1,18 +1,13 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+{% extends "base.html"%}
+
+{% block head %}
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Llista de gratacels" />
 	<meta name="robots" content="all" />
 	<title>Gratacels DataBase: Llista de gratacels</title>
 
-	<style type="text/css" title="./currentStyle" media="all">
-		@import "/static/global.css";
-	</style>
-	<script type="text/javascript" src="/static/myJs.js"></script>
-</head>
-
+{% endblock %}
+{% block content %}
 <body>
 <script type="text/javascript"> capPagina();</script>
 
@@ -31,6 +26,4 @@
 {% else %}
 <p>No hi ha gratacels a la base de dades</p>
 {% endif %}
-<script type="text/javascript"> peuPagina();</script>
-</body>
-</html>
+{% endblock %}

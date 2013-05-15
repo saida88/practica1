@@ -41,7 +41,8 @@ def gratacelpage(request, idGratacel):
 		'gratacel': gratacel,
 		'arquitectes': arquitectes,
 		'estils': estils,
-		'materials': materials
+		'materials': materials,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -64,7 +65,8 @@ def gratacel_list(request):
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
-		'gratacels': gratacels
+		'gratacels': gratacels,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -87,7 +89,8 @@ def arquitectepage(request, idArquitecte):
 	gratacels=arquitecte.gratacel_set.all()
 	variables = Context({
 		'arquitecte': arquitecte,
-		'gratacels': gratacels
+		'gratacels': gratacels,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -109,7 +112,8 @@ def estilpage(request, idEstil):
 	gratacels=estil.gratacel_set.all()	
 	variables = Context({
 		'estil': estil,
-		'gratacels': gratacels
+		'gratacels': gratacels,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -132,7 +136,8 @@ def materialpage(request, idMaterial):
 	
 	variables = Context({
 		'material': material,
-		'gratacels': gratacels
+		'gratacels': gratacels,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -156,7 +161,8 @@ def arquitecte_list(request):
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
-		'arquitectes': arquitectes
+		'arquitectes': arquitectes,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -180,7 +186,8 @@ def material_list(request):
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
-		'materials': materials
+		'materials': materials,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -204,7 +211,8 @@ def estil_list(request):
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
-		'estils': estils
+		'estils': estils,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)

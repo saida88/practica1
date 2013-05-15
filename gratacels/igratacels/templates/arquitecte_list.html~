@@ -1,17 +1,12 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+{% extends "base.html"%}
+
+{% block head %}
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Llista d'arquitectes" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase: Llista d'arquitectes</title>
-
-	<style type="text/css" title="./currentStyle" media="all">
-		@import "/static/global.css";
-	</style>
-	<script type="text/javascript" src="/static/myJs.js"></script>
-</head>
+	<title>Gratacels DataBase: Pàgina inicial</title>
+{% endblock %}
+{% block content %}
 
 <body>
 <script type="text/javascript"> capPagina();</script>
@@ -20,7 +15,7 @@
 {% if arquitectes %}
 <table>
 <thead>
-<tr><td>Nom</td><td>Data Naixement</td><td>Data Defunció</td><td>Nacionalitat</td><tr>
+<tr><td>Nom</td><td>Data Naixement</td><td>Data Defunció</td><td>Nacionalitat</td></tr>
 </thead>
 {% for arquitecte in arquitectes %}
 <tr>
@@ -31,5 +26,5 @@
 {% else %}
 <p>No hi ha arquitectes a la base de dades</p>
 {% endif %}
-<script type="text/javascript"> peuPagina();</script>
-</html>
+
+{% endblock %}

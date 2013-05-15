@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
@@ -14,7 +14,16 @@
 </head>
 
 <body>
-<script type="text/javascript"> capPagina();</script>
+<script type="text/javascript"> capPagina();</script>-->
+{% extends "base.html"%}
+
+{% block head %}
+	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
+	<meta name="description" content="Pàgina inicial" />
+	<meta name="robots" content="all" />
+	<title>Gratacels DataBase: Pàgina inicial</title>
+{% endblock %}
+{% block content %}
    	  <div class="teaser">
             <img src="/static/img/teaser_image.jpg" alt="Teaser image" />
             	<h2>Aplicació web sobre gratacels</h2>
@@ -37,6 +46,8 @@
 	       <li>Añadir autenticación y gestión de usuarios (builtin de Django).</li>
 		</ol>
 	    </p>
+{% endblock %}
+<!--
 <script type="text/javascript"> peuPagina();</script>
 </body>
-</html>
+</html>-->

@@ -20,7 +20,7 @@
 {% if estils %}
 <table>
 <thead>
-<tr><td>Nom</td><td>Any Inici</td><td>Any Final</td><tr>
+<tr><td>Nom</td><td>Any Inici</td><td>Any Final</td></tr>
 </thead>
 {% for estil in estils %}
 <tr>

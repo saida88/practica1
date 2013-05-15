@@ -1,20 +1,13 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+{% extends "base.html"%}
+
+{% block head %}
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Dades de gratacel" />
 	<meta name="robots" content="all" />
 	<title>Gratacels DataBase: {{gratacel.nom}}</title>
 
-	<style type="text/css" title="./currentStyle" media="all">
-		@import "/static/global.css";
-	</style>
-	<script type="text/javascript" src="/static/myJs.js"></script>
-</head>
-
-<body>
-<script type="text/javascript"> capPagina();</script>
+	{% endblock %}
+{% block content %}
 
 <img id="fotogratacel" src="/static/img/{{gratacel.imatge}}" alt="fotografia del gratacel {{gratacel.nom}}" />
 
@@ -60,6 +53,4 @@
 {% else %}
 <p>No te materials associats.</p>
 {% endif %}
-<script type="text/javascript"> peuPagina();</script>
-</body>
-</html>
+{% endblock %}

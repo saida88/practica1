@@ -1,20 +1,13 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" >
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+{% extends "base.html"%}
+
+{% block head %}
 	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
 	<meta name="description" content="Dades de l'estil arquitectònic" />
 	<meta name="robots" content="all" />
-	<title>Gratacels DataBase: Dades de l'estil arquitectònic</title>
-
-	<style type="text/css" title="./currentStyle" media="all">
-		@import "/static/global.css";
-	</style>
-	<script type="text/javascript" src="/static/myJs.js"></script>
-</head>
-
-<body>
-<script type="text/javascript"> capPagina();</script>
+	<title>Gratacels DataBase: {{estil.nom}}</title>
+{% endblock %}
+{% block content %}
+	
 <h1>Dades del Estil {{estil.nom}}</h1>
 <ul>
 <li>Any Inici: {{estil.dataInici}}</li>

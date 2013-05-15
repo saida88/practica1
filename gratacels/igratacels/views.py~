@@ -29,9 +29,9 @@ def gratacelpage(request, idGratacel):
 
 	parametre = request.GET.get('format','')
 	if parametre =="XML":
-		template = get_template('gatacelpage.xml')
+		template = get_template('gratacelpage.xml')
 	elif parametre =="JSON":
-		template = get_template('gratacelpageJSON.html')	
+		template = get_template('gratacelpage.js')	
 	else:
 		template = get_template('gratacelpage.html')
 	arquitectes = gratacel.arquitectes.all()
@@ -41,7 +41,8 @@ def gratacelpage(request, idGratacel):
 		'gratacel': gratacel,
 		'arquitectes': arquitectes,
 		'estils': estils,
-		'materials': materials
+		'materials': materials,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -56,7 +57,7 @@ def gratacel_list(request):
 	if parametre =="XML":
 		template = get_template('gratacel_list.xml')
 	elif parametre =="JSON":
-		template = get_template('gratacel_listJSON.html')	
+		template = get_template('gratacel_list.js')	
 	else:
 		template = get_template('gratacel_list.html')
 
@@ -64,7 +65,8 @@ def gratacel_list(request):
 		'titlehead': 'Gratacels aPP',
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
-		'gratacels': gratacels
+		'gratacels': gratacels,
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -80,7 +82,7 @@ def arquitectepage(request, idArquitecte):
 	if parametre =="XML":
 		template = get_template('arquitectepage.xml')
 	elif parametre =="JSON":
-		template = get_template('arquitectepageJSON.html')	
+		template = get_template('arquitectepage.js')	
 	else:
 		template = get_template('arquitectepage.html')
 
@@ -88,6 +90,7 @@ def arquitectepage(request, idArquitecte):
 	variables = Context({
 		'arquitecte': arquitecte,
 		'gratacels': gratacels
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -102,7 +105,7 @@ def estilpage(request, idEstil):
 	if parametre =="XML":
 		template = get_template('estilpage.xml')
 	elif parametre =="JSON":
-		template = get_template('estilpageJSON.html')	
+		template = get_template('estilpage.js')	
 	else:
 		template = get_template('estilpage.html')
 
@@ -110,6 +113,7 @@ def estilpage(request, idEstil):
 	variables = Context({
 		'estil': estil,
 		'gratacels': gratacels
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -125,7 +129,7 @@ def materialpage(request, idMaterial):
 	if parametre =="XML":
 		template = get_template('materialpage.xml')
 	elif parametre =="JSON":
-		template = get_template('materialJSON.html')	
+		template = get_template('materialpage.js')	
 	else:
 		template = get_template('materialpage.html')
 	gratacels=material.gratacel_set.all()
@@ -133,6 +137,7 @@ def materialpage(request, idMaterial):
 	variables = Context({
 		'material': material,
 		'gratacels': gratacels
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -147,7 +152,7 @@ def arquitecte_list(request):
 	if parametre =="XML":
 		template = get_template('arquitecte_list.xml')
 	elif parametre =="JSON":
-		template = get_template('arquitecte_listJSON.html')	
+		template = get_template('arquitecte_list.js')	
 	else:
 		template = get_template('arquitecte_list.html')
 	
@@ -157,6 +162,7 @@ def arquitecte_list(request):
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
 		'arquitectes': arquitectes
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -171,7 +177,7 @@ def material_list(request):
 	if parametre =="XML":
 		template = get_template('material_list.xml')
 	elif parametre =="JSON":
-		template = get_template('material_listJSON.html')	
+		template = get_template('material_list.js')	
 	else:
 		template = get_template('material_list.html')
 
@@ -181,6 +187,7 @@ def material_list(request):
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
 		'materials': materials
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
@@ -195,7 +202,7 @@ def estil_list(request):
 	if parametre =="XML":
 		template = get_template('estil_list.xml')
 	elif parametre =="JSON":
-		template = get_template('estil_listJSON.html')	
+		template = get_template('estil_list.js')	
 	else:
 		template = get_template('estil_list.html')
 
@@ -205,6 +212,7 @@ def estil_list(request):
 		'pagetitle': 'Welcome to the Gratacels aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
 		'estils': estils
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)

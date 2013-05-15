@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="David Hernández, David Canudes, Saida Javierre" />
+	<meta name="keywords" content="gratacels, estils, arquitectes, materials" />
+	<meta name="description" content="Dades de gratacels" />
+	<meta name="robots" content="all" />
+	<title>Gratacels DataBase</title>
+
+	<style type="text/css" title="./currentStyle" media="all">
+		@import "/static/global.css";
+	</style>
+	<script language="JavaScript" type="text/javascript">
+	function eco2(){alert("OLAAAA");}
+	function eco(){
+		var etTitol = document.createElement('h1');
+		var text = document.createTextNode('Dades del Estil {{estil.nom}}');
+		etTitol.appendChild(text);
+		
+
+		var etLlista = document.createElement('ul');
+		
+		var element_1 = document.createElement('li');
+		var text_1 = document.createTextNode('Any Inici: {{estil.dataInici}}');
+		element_1.appendChild(text_1);
+		var element_2 = document.createElement('li');
+		var text_2 = document.createTextNode('Any Fi: {{estil.dataFi}}');
+		element_2.appendChild(text_2);
+
+		etLlista.appendChild(element_2);
+		etLlista.insertBefore(element_1, element_2);
+
+		var etSubTitol = document.createElement('h4');
+		var text = document.createTextNode('Gratacels construits amb el estil:');
+		etSubTitol.appendChild(text);
+
+		   
+		
+
+		etLlista.appendChild(element_2);
+		etLlista.insertBefore(element_1, element_2);
+		
+		document.getElementById('content').appendChild(etSubTitol);
+		document.getElementById('content').insertBefore(etLlista,etSubTitol);
+		document.getElementById('content').insertBefore(etTitol,etLlista);
+		
+
+	}	
+	</script>
+
+
+	<script type="text/javascript" src="/static/myJs.js"></script>
+</head>
+
+<body>
+<script type="text/javascript"> capPagina();</script>
+<div id="unId"></div>
+<script type="text/javascript">eco();</script>
+
+
+{% if gratacels %}
+<ol>
+{% for gratacel in gratacels %}
+<li>
+{{gratacel.nom}} - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No hi ha construit gratacels en aquest estil.</p>
+{% endif %}
+<script type="text/javascript"> peuPagina();</script>
