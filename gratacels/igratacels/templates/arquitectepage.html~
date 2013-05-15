@@ -10,9 +10,11 @@
 	
 <img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
 
-<h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}} {% if user = material.user %}
+<h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}}
+	{% if user = material.user %}
 		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
-	{% endif %}</h1>
+	{% endif %}
+</h1>
 
 <ul>
 <li>Nom: {{arquitecte.nom}}</li>

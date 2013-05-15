@@ -23,7 +23,8 @@
 </thead>
 {% for gratacel in gratacels %}
 <tr>
-<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}} {% if user = material.user %}
+<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}}
+	{% if user = material.user %}
 		(<a href="/gratacel/{{gratacel.idGratacel}}/edit/">Editar Gratacel</a>)
 	{% endif %}</td>
 </tr>

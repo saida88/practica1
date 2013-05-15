@@ -3,7 +3,9 @@
 <script>
 $(function() {
 var countries = ["Afghanistan", "Albania",..."Zaire", "Zambia", "Zimbabwe"];
-$( "#id_nacionalitat" ).autocomplete({source: countries});
+$( "#id_nacionalitat" ).autocomplete({
+source: countries
+});
 });
 </script>
 	<form method="post" action="">

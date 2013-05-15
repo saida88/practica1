@@ -22,7 +22,8 @@
 </thead>
 {% for arquitecte in arquitectes %}
 <tr>
-<td><a href="/arquitecte/{{arquitecte.idArquitecte}}"> {{arquitecte.cognom}}, {{arquitecte.nom}}</a></td><td> {{arquitecte.data_naixement}} </td><td>{{arquitecte.data_defuncio}}</td><td> {{arquitecte.nacionalitat}} {% if user = material.user %}
+<td><a href="/arquitecte/{{arquitecte.idArquitecte}}"> {{arquitecte.cognom}}, {{arquitecte.nom}}</a></td><td> {{arquitecte.data_naixement}} </td><td>{{arquitecte.data_defuncio}}</td><td> {{arquitecte.nacionalitat}}
+	{% if user = material.user %}
 		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
 	{% endif %}</td>
 </tr>

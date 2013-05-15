@@ -26,7 +26,7 @@
   <div id="main">
     <div id="navi">
 	{% if user.username %}
-		<h2><a Benvingut {{ user.username }} </h2></a> 
+		<h2> Benvingut {{ user.username }} </h2>
 	{% else %}<a href="/login">Login</a>
 	{% endif %}	
 	<ul>

@@ -22,7 +22,7 @@
 {% for estil in estils %}
 <tr>
 <td><a href="/estil/{{estil.idEstil}}"> {{estil.nom}}</a></td><td> {{estil.dataInici}}</td><td>{{estil.dataFi}}
-	{% if user = material.user %}
+	{% if user = estil.user %}
 		(<a href="/estil/{{estil.idEstil}}/edit/">Editar Estil</a>)
 	{% endif %}</td>
 </tr>

@@ -11,7 +11,7 @@
 <img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
 
 <h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}}
-	{% if user = material.user %}
+	{% if user = arquitecte.user %}
 		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
 	{% endif %}
 </h1>
