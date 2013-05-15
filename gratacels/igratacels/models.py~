@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+from datetime import date
 
 # Create your models here.
 
@@ -7,21 +10,27 @@ class Arquitecte (models.Model):
 	nom = models.TextField(max_length=25)
 	cognom = models.TextField(max_length=25)
 	data_naixement = models.DateField()
-	data_defuncio = models.DateField(blank=True)
+	data_defuncio = models.DateField(blank=True,null=True)
 	nacionalitat = models.TextField(max_length=25)
 	imatge = models.TextField()
+	user = models.ForeignKey(User)
+	date = models.DateField(default=date.today)
 
 class Material (models.Model):
 	idMaterial = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
 	densitat = models.FloatField()
 	cost = models.FloatField()
+	user = models.ForeignKey(User)
+	date = models.DateField(default=date.today)
 
 class Estil (models.Model): 
 	idEstil = models.AutoField(primary_key=True)
 	nom = models.TextField(max_length=25)
 	dataInici = models.IntegerField(max_length=4)
-	dataFi = models.IntegerField(max_length=4, blank = True)
+	dataFi = models.IntegerField(max_length=4, blank = True,null=True)
+	user = models.ForeignKey(User)
+	date = models.DateField(default=date.today)
 
 class Gratacel (models.Model):
 	idGratacel = models.AutoField(primary_key=True)
@@ -36,6 +45,8 @@ class Gratacel (models.Model):
 	arquitectes = models.ManyToManyField(Arquitecte)
 	materials = models.ManyToManyField(Material)
 	imatge = models.TextField()
+	user = models.ForeignKey(User)
+	date = models.DateField(default=date.today)
 
 #class GratacelsArquitecte (models.Model):
 #	idGratacel = models.ForeignKey(Gratacel, primary_key=True)

@@ -6,6 +6,12 @@ from django.template import Context
 from django.template.loader import get_template
 from django.shortcuts import render_to_response
 from igratacels.models import *
+from forms import *
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+from django.views.generic import DetailView
+from django.views.generic.edit import CreateView
 
 def mainpage(request):
 	return render_to_response(
@@ -230,6 +236,42 @@ def userpage(request, username):
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
+
+class EstilCreate (CreateView):
+	model = Estil
+	template_name = 'form.html'
+	form_class = EstilForm
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super(EstilCreate, self).form_valid(form)
+
+class MaterialCreate (CreateView):
+	model = Material
+	template_name = 'form.html'
+	form_class = MaterialForm
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super(MaterialCreate, self).form_valid(form)
+
+class ArquitecteCreate (CreateView):
+	model = Arquitecte
+	template_name = 'form.html'
+	form_class = ArquitecteForm
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super(ArquitecteCreate, self).form_valid(form)
+
+class GratacelCreate (CreateView):
+	model = Gratacel
+	template_name = 'form.html'
+	form_class = GratacelForm
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super(GratacelCreate, self).form_valid(form)
 
 #def login(request):	
 #	if request.method== 'POST':

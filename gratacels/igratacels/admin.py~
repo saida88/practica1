@@ -1,8 +1,8 @@
 from django.contrib import admin
 from igratacels.models import *
 
-admin.site.register(Arquitecte)
-admin.site.register(Gratacel)
-admin.site.register(Materials)
-admin.site.register(Estil)
+admin.site.register(models.Arquitecte)
+admin.site.register(models.Gratacel)
+admin.site.register(models.Material)
+admin.site.register(models.Estil)
 
