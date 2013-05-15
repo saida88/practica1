@@ -11,7 +11,11 @@
 <body>
 <script type="text/javascript"> capPagina();</script>
 
-<h1>Gratacels</h1>
+<h1>Gratacels
+	{% if user.username %}
+		(<a href="/gratacels/create/">Afegir Gratacel</a>)
+	{% endif %}
+</h1>
 {% if gratacels %}
 <table>
 <thead>
@@ -19,7 +23,10 @@
 </thead>
 {% for gratacel in gratacels %}
 <tr>
-<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}} </td>
+<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}}
+	{% if user = material.user %}
+		(<a href="/gratacel/{{gratacel.idGratacel}}/edit/">Editar Gratacel</a>)
+	{% endif %}</td>
 </tr>
 {% endfor %}
 </table>

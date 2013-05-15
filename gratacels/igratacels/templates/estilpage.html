@@ -8,7 +8,11 @@
 {% endblock %}
 {% block content %}
 	
-<h1>Dades del Estil {{estil.nom}}</h1>
+<h1>Dades del Estil {{estil.nom}}
+	{% if user = estil.user %}
+		(<a href="/estil/{{estil.idEstil}}/edit/">Editar Estil</a>)
+	{% endif %}
+</h1>
 <ul>
 <li>Any Inici: {{estil.dataInici}}</li>
 <li>Any Fi: {{estil.dataFi}}</li>

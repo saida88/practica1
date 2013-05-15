@@ -11,7 +11,11 @@
 
 <img id="fotogratacel" src="/static/img/{{gratacel.imatge}}" alt="fotografia del gratacel {{gratacel.nom}}" />
 
-<h1>Dades del Gratacel {{ gratacel.nom }}</h1>
+<h1>Dades del Gratacel {{ gratacel.nom }}
+	{% if user = gratacel.user %}
+		(<a href="/gratacel/{{gratacel.idGratacel}}/edit/">Editar Gratacel</a>)
+	{% endif %}
+</h1>
 <ul>
 <li> Alçada: {{ gratacel.altura }}m </li>
 <li> Alçada Terrat: {{ gratacel.altura_terrat }}m </li>
