@@ -103,4 +103,5 @@ urlpatterns = patterns('',
     url(r'^home', mainpage, name='home'),
     url(r'^user/(\w+)/$', userpage),
     url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
 )
