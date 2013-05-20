@@ -19,4 +19,4 @@ class ArquitecteForm(ModelForm):
 class GratacelForm(ModelForm):
 	class Meta:
 		model = Gratacel
-		exclude = ('user', 'date', 'idGratacel', 'idEstil', 'arquitectes', 'materials')
+		exclude = ('user', 'date', 'idGratacel')

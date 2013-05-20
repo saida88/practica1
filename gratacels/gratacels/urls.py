@@ -19,11 +19,22 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^materials/create/$', MaterialCreate.as_view(), name='material_create'),
-    url(r'^estils/create/$', EstilCreate.as_view(), name='estil_create'),
-    url(r'^arquitectes/create/$', ArquitecteCreate.as_view(), name='arquitecte_create'),
-    url(r'^gratacels/create/$', GratacelCreate.as_view(), name='gratacel_create'),
 
+#CREATE URL
+    url(r'^materials/create/$',
+	MaterialCreate.as_view(),
+	name='material_create'),
+    url(r'^estils/create/$',
+	EstilCreate.as_view(),
+	name='estil_create'),
+    url(r'^arquitectes/create/$',
+	ArquitecteCreate.as_view(),
+	name='arquitecte_create'),
+    url(r'^gratacels/create/$',
+	GratacelCreate.as_view(),
+	name='gratacel_create'),
+
+#EDIT URL
     url(r'^material/(?P<pk>\d+)/edit/$',
 	 UpdateView.as_view(model = Material, 
 	 template_name = 'form.html',
@@ -44,19 +55,31 @@ urlpatterns = patterns('',
 	 template_name = 'form.html',
 	 form_class = GratacelForm), 
 	 name='gratacel_edit'),
-	
-    # Uncomment the next line to enable the admin:
+
+#LIST URL
+    url(r'^gratacels/', gratacel_list),
+    url(r'^arquitectes/$', 'igratacels.views.arquitecte_list'),
+    url(r'^estils/$', 'igratacels.views.estil_list'),
+    url(r'materials/$', 'igratacels.views.material_list'),
+
+#DETAIL URL	
+    url(r'^gratacel/(?P<idGratacel>\d+)$',
+	'igratacels.views.gratacelpage',
+	name='gratacel_detail'),
+    url(r'^arquitecte/(?P<idArquitecte>\d+)',
+	'igratacels.views.arquitectepage',
+	name='arquitecte_detail'),
+    url(r'^estil/(?P<idEstil>\d+)$',
+	'igratacels.views.estilpage',
+	name='estil_detail'),
+    url(r'material/(?P<idMaterial>\d+)/$',
+	'igratacels.views.materialpage',
+	name='material_detail'),
+
+#OTHER URL
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', mainpage, name='home'),
     url(r'^home', mainpage, name='home'),
-    url(r'^gratacel/(\w+)$', gratacelpage),
-    url(r'^gratacels/', gratacel_list),
-    url(r'^arquitecte/(\w+)', arquitectepage),
-    url(r'^arquitectes/$', 'igratacels.views.arquitecte_list'),
-    url(r'^estil/(\w+)$', estilpage),
-    url(r'^estils/$', 'igratacels.views.estil_list'),
-    url(r'material/(\w+)/$', materialpage),
-    url(r'materials/$', 'igratacels.views.material_list'),
     url(r'^user/(\w+)/$', userpage),
     url(r'^login/$', 'django.contrib.auth.views.login'),
 )

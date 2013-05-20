@@ -237,6 +237,38 @@ def userpage(request, username):
 	output = template.render(variables)
 	return HttpResponse(output)
 
+class GratacelDetail (DetailView):
+	model = Gratacel
+	template_name = 'gratacelpage.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(GratacelDetail, self).get_context_data(**kwargs)
+		return context
+
+class EstilDetail (DetailView):
+	model = Estil
+	template_name = 'estilpage.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(EstilDetail, self).get_context_data(**kwargs)
+		return context
+
+class MaterialDetail (DetailView):
+	model = Material
+	template_name = 'materialpage.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(MaterialDetail, self).get_context_data(**kwargs)
+		return context
+
+class ArquitecteDetail (DetailView):
+	model = Arquitecte
+	template_name = 'arquitectepage.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(ArquitecteDetail, self).get_context_data(**kwargs)
+		return context
+	
 class EstilCreate (CreateView):
 	model = Estil
 	template_name = 'form.html'
