@@ -57,10 +57,14 @@ urlpatterns = patterns('',
 	 name='gratacel_edit'),
 
 #LIST URL
-    url(r'^gratacels/', gratacel_list),
-    url(r'^arquitectes/$', 'igratacels.views.arquitecte_list'),
-    url(r'^estils/$', 'igratacels.views.estil_list'),
-    url(r'materials/$', 'igratacels.views.material_list'),
+    url(r'^gratacels/', gratacel_list,
+	name='gratacel_list'),
+    url(r'^arquitectes/$', 'igratacels.views.arquitecte_list',
+	name='arquitecte_list'),
+    url(r'^estils/$', 'igratacels.views.estil_list',
+	name='estil_list'),
+    url(r'materials/$', 'igratacels.views.material_list',
+	name='material_list'),
 
 #DETAIL URL	
     url(r'^gratacel/(?P<idGratacel>\d+)$',
@@ -75,6 +79,23 @@ urlpatterns = patterns('',
     url(r'material/(?P<idMaterial>\d+)/$',
 	'igratacels.views.materialpage',
 	name='material_detail'),
+
+
+
+#DELETE URL	
+    url(r'^gratacel/(?P<idGratacel>\d+)/delete/$',
+	DeleteView.as_view(),
+	name='gratacel_delete'),
+    url(r'^arquitecte/(?P<idArquitecte>\d+)/delete/$',
+	DeleteView.as_view(),
+	name='arquitecte_delete'),
+    url(r'^estil/(?P<idEstil>\d+)/delete/$',
+	DeleteView.as_view(),
+	name='estil_delete'),
+    url(r'material/(?P<pk>\d+)/delete/$',
+	MaterialDelete.as_view(),
+	name='material_delete'),
+
 
 #OTHER URL
     url(r'^admin/', include(admin.site.urls)),

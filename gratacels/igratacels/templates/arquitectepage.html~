@@ -11,7 +11,7 @@
 <img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
 
 <h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}}
-	{% if user = material.user %}
+	{% if user = arquitecte.user %}
 		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
 	{% endif %}
 </h1>
@@ -28,7 +28,7 @@
 <h2>Gratacels construits:</h2>
 {% if gratacels %}
 <ol>
-{% for gratacel in gratacels %}
+{% for arquitecte in arquitectes %}
 <li>
 <a href="/gratacel/{{gratacel.idGratacel}}">{{gratacel.nom}}</a> - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
 </li>

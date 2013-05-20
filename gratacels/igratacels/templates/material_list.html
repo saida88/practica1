@@ -23,6 +23,7 @@
 <td><a href="/material/{{material.idMaterial}}"> {{material.nom}}</a></td><td> {{material.densitat}} kg/m3</td><td>{{material.cost}} €
 	{% if user = material.user%}
 		(<a href="/material/{{material.idMaterial}}/edit/">Editar Material</a>)
+		(<a href="/material/{{material.idMaterial}}/delete/">Eliminar Material</a>)
 	{% endif %}</td>
 </tr>
 {% endfor %}

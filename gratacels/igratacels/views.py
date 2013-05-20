@@ -8,10 +8,13 @@ from django.shortcuts import render_to_response
 from igratacels.models import *
 from forms import *
 from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import DeleteView
+
 
 def mainpage(request):
 	return render_to_response(
@@ -304,6 +307,27 @@ class GratacelCreate (CreateView):
 	def form_valid(self, form):
 		form.instance.user = self.request.user
 		return super(GratacelCreate, self).form_valid(form)
+
+class MaterialDelete(DeleteView):
+	model = Material
+	template_name = 'delete.html'
+	success_url = '/materials'
+
+class EstilDelete(DeleteView):
+	model = Material
+	template_name = 'delete.html'
+	success_url = '/estils'
+
+class ArquitecteDelete(DeleteView):
+	model = Material
+	template_name = 'delete.html'
+	success_url = '/arquitectes'
+
+class GratacelDelete(DeleteView):
+	model = Material
+	template_name = 'delete.html'
+	success_url = '/gratacels'
+
 
 #def login(request):	
 #	if request.method== 'POST':

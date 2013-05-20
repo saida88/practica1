@@ -6,7 +6,7 @@ class EstilForm(ModelForm):
 		model = Estil
 		exclude = ('user', 'date', 'idEstil')
 
-class ModelMaterial(ModelForm):
+class MaterialForm(ModelForm):
 	class Meta:
 		model = Material
 		exclude = ('user', 'date', 'idMaterial')
@@ -19,4 +19,4 @@ class ArquitecteForm(ModelForm):
 class GratacelForm(ModelForm):
 	class Meta:
 		model = Gratacel
-		exclude = ('user', 'date', 'idGratacel', 'idEstil', 'arquitectes', 'materials')
+		exclude = ('user', 'date', 'idGratacel', 'idEstil', 'arquitectes')

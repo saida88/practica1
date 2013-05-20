@@ -25,6 +25,7 @@
 <td><a href="/arquitecte/{{arquitecte.idArquitecte}}"> {{arquitecte.cognom}}, {{arquitecte.nom}}</a></td><td> {{arquitecte.data_naixement}} </td><td>{{arquitecte.data_defuncio}}</td><td> {{arquitecte.nacionalitat}}
 	{% if user = arquitecte.user %}
 		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
+		(<a href="/arquitecte/{{arquitecte.idMaterial}}/delete/">Eliminar Arquitecte</a>)
 	{% endif %}</td>
 </tr>
 {% endfor %}

@@ -24,6 +24,7 @@
 <td><a href="/estil/{{estil.idEstil}}"> {{estil.nom}}</a></td><td> {{estil.dataInici}}</td><td>{{estil.dataFi}}
 	{% if user = estil.user %}
 		(<a href="/estil/{{estil.idEstil}}/edit/">Editar Estil</a>)
+		(<a href="/estil/{{estil.idMaterial}}/delete/">Eliminar Estil</a>)
 	{% endif %}</td>
 </tr>
 {% endfor %}
