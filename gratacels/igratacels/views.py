@@ -7,13 +7,23 @@ from django.template.loader import get_template
 from django.shortcuts import render_to_response
 from igratacels.models import *
 from forms import *
-from django.core.urlresolvers import reverse
-from django.core.urlresolvers import reverse_lazy
-from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import DeleteView
+from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+
+from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+from models import RestaurantReview, Restaurant, Dish
+from forms import RestaurantForm, DishForm
+from serializers import ArquitecteSerializer, GratacelSerializer, EstilSerializer, MaterialSerializer
+
+
 
 
 def mainpage(request):
@@ -271,6 +281,8 @@ class ArquitecteDetail (DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(ArquitecteDetail, self).get_context_data(**kwargs)
 		return context
+
+#CREATES
 	
 class EstilCreate (CreateView):
 	model = Estil
@@ -308,10 +320,12 @@ class GratacelCreate (CreateView):
 		form.instance.user = self.request.user
 		return super(GratacelCreate, self).form_valid(form)
 
+#DELETES
+
 class MaterialDelete(DeleteView):
 	model = Material
 	template_name = 'delete.html'
-	success_url = '/materials'
+	success_url = reverse_lazy('material_list')
 
 class EstilDelete(DeleteView):
 	model = Material
@@ -327,6 +341,41 @@ class GratacelDelete(DeleteView):
 	model = Material
 	template_name = 'delete.html'
 	success_url = '/gratacels'
+
+#API RESTFUL
+
+class APIGratacelList(generics.ListCreateAPIView):
+	model = Gratacel
+	serializer_class = GratacelSerializer
+
+class APIGratacelDetail(generics.RetrieveUpdateDestroyAPIView):
+	model = Gratacel
+	serializer_class = GratacelSerializer
+
+class APIEstilList(generics.ListCreateAPIView):
+	model = Estil
+	serializer_class = EstilSerializer
+
+class APIEstilDetail(generics.RetrieveUpdateDestroyAPIView):
+	model = Estil
+	serializer_class = EstilSerializer
+
+class APIMaterialList(generics.ListCreateAPIView):
+	model = Material
+	serializer_class = MaterialSerializer
+
+class APIMaterialDetail(generics.RetrieveUpdateDestroyAPIView):
+	model = Material
+	serializer_class = MaterialSerializer
+
+class APIArquitecteList(generics.ListCreateAPIView):
+	model = Gratacel
+	serializer_class = GratacelSerializer
+
+class APIArquitecteDetail(generics.RetrieveUpdateDestroyAPIView):
+	model = Gratacel
+	serializer_class = GratacelSerializer
+
 
 
 #def login(request):	

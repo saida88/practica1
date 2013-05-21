@@ -12,6 +12,8 @@ from igratacels.views import MaterialCreate, EstilCreate, ArquitecteCreate, Grat
 from django.contrib import admin
 admin.autodiscover()
 
+from views import APIGratacelDetail, APIArquitecteDetail, APIEstilDetail, APIMaterialDetail
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'gratacels.views.home', name='home'),
@@ -104,4 +106,18 @@ urlpatterns = patterns('',
     url(r'^user/(\w+)/$', userpage),
     url(r'^login/$', 'django.contrib.auth.views.login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout'),
+
+#API URL
+urlpatterns += patterns('',
+url(r'^api/$', 'api_root'),
+url(r'^api/gratacels/$', APIGratacelList.as_view(), name='gratacel_list'),
+url(r'^api/gratacels/(?P<pk>\d+)/$', APIGratacelDetail.as_view(), name='gratacel_list'),
+url(r'^api/materials/$', APIMaterialsList.as_view(), name='material_list'),
+url(r'^api/materials/(?P<pk>\d+)/$', APIMaterialsDetail.as_view(), name='material_list'),
+url(r'^api/estil/$', APIEstilsList.as_view(), name='estil_list'),
+url(r'^api/estil/(?P<pk>\d+)/$', APIEstilsDetail.as_view(), name='estil_list'),
+url(r'^api/arquitecte/$', APIArquitectesList.as_view(), name='arquitecte_list'),
+url(r'^api/arquitecte/(?P<pk>\d+)/$', APIArquitectesDetail.as_view(), name='arquitecte_detail'),
+)
+
 )
