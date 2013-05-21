@@ -1,16 +1,33 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
-<script>
-$(function() {
-var countries = ["Afghanistan", "Albania",..."Zaire", "Zambia", "Zimbabwe"];
-$( "#id_nacionalitat" ).autocomplete({source: countries});
-});
-</script>
-	<form method="post" action="">
+
+<script> 	
+   $(function() {
+            $.getJSON("{% static "countries.json" %}", {}, function (countries) {
+                $("#id_nacionalitat").autocomplete({
+                    source: countries
+                });
+            });
+
+		minLength: 2,
+                select: function( event, ui ) {
+                    if (ui.item) {
+                        
+                        $("#id_nacionalitat").val(ui.item.nacionalitat);
+                    }
+		}
+
+	}
+</script>	
+ 
+
+
+	<form method="post" enctype="multipart/form-data" action="">
 		{% csrf_token %}
 		<table>
 			{{ form.as_table }}
 		</table>
-		<input type="submit" value="Submit"/>
+		<input type="submit" value="Enviar"/>
 	</form>
 {% endblock %}
