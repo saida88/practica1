@@ -7,12 +7,14 @@ from django.views.generic import DetailView, ListView, UpdateView
 from igratacels.models import *
 from igratacels.forms import EstilForm, MaterialForm, ArquitecteForm, GratacelForm
 from igratacels.views import MaterialCreate, EstilCreate, ArquitecteCreate, GratacelCreate
+from igratacels.views import*
 
+#from igratacels.views import APIMaterialDetail, APIMaterialList, APIEstilList, APIEstilDetail, APIArquitecteList,APIArquitecteDetail, APIGratacelDetail, APIGratacelList
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-from views import APIGratacelDetail, APIArquitecteDetail, APIEstilDetail, APIMaterialDetail
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -21,6 +23,14 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+#OTHER URL
+    url(r'^admin/', include(admin.site.urls)), 
+    url(r'^$', mainpage, name='home'),
+    url(r'^home', mainpage, name='home'),
+    url(r'^user/(\w+)/$', userpage),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
 
 #CREATE URL
     url(r'^materials/create/$',
@@ -99,25 +109,16 @@ urlpatterns = patterns('',
 	name='material_delete'),
 
 
-#OTHER URL
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', mainpage, name='home'),
-    url(r'^home', mainpage, name='home'),
-    url(r'^user/(\w+)/$', userpage),
-    url(r'^login/$', 'django.contrib.auth.views.login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout'),
+
 
 #API URL
-urlpatterns += patterns('',
-url(r'^api/$', 'api_root'),
-url(r'^api/gratacels/$', APIGratacelList.as_view(), name='gratacel_list'),
-url(r'^api/gratacels/(?P<pk>\d+)/$', APIGratacelDetail.as_view(), name='gratacel_list'),
-url(r'^api/materials/$', APIMaterialsList.as_view(), name='material_list'),
-url(r'^api/materials/(?P<pk>\d+)/$', APIMaterialsDetail.as_view(), name='material_list'),
-url(r'^api/estil/$', APIEstilsList.as_view(), name='estil_list'),
-url(r'^api/estil/(?P<pk>\d+)/$', APIEstilsDetail.as_view(), name='estil_list'),
-url(r'^api/arquitecte/$', APIArquitectesList.as_view(), name='arquitecte_list'),
-url(r'^api/arquitecte/(?P<pk>\d+)/$', APIArquitectesDetail.as_view(), name='arquitecte_detail'),
-)
+url(r'^api/gratacel/$', APIGratacelList.as_view(), name='gratacel-list'),
+url(r'^api/gratacel/(?P<pk>\d+)/$', APIGratacelDetail.as_view(), name='gratacel-detail'),
+url(r'^api/material/$', APIMaterialList.as_view(), name='material-list'),
+url(r'^api/material/(?P<pk>\d+)/$', APIMaterialDetail.as_view(), name='material-detail'),
+url(r'^api/estil/$', APIEstilList.as_view(), name='estil-list'),
+url(r'^api/estil/(?P<pk>\d+)/$', APIEstilDetail.as_view(), name='estil-detail'),
+url(r'^api/arquitecte/$', APIArquitecteList.as_view(), name='arquitecte-list'),
+url(r'^api/arquitecte/(?P<pk>\d+)/$', APIArquitecteDetail.as_view(), name='arquitecte-detail'),
 
 )

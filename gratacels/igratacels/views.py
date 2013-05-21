@@ -19,11 +19,8 @@ from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-from models import RestaurantReview, Restaurant, Dish
-from forms import RestaurantForm, DishForm
-from serializers import ArquitecteSerializer, GratacelSerializer, EstilSerializer, MaterialSerializer
-
-
+#from serializers import ArquitecteSerializer, EstilSerializer, MaterialSerializer, GratacelSerializer
+from serializers import *
 
 
 def mainpage(request):
@@ -344,6 +341,7 @@ class GratacelDelete(DeleteView):
 
 #API RESTFUL
 
+
 class APIGratacelList(generics.ListCreateAPIView):
 	model = Gratacel
 	serializer_class = GratacelSerializer
@@ -369,12 +367,12 @@ class APIMaterialDetail(generics.RetrieveUpdateDestroyAPIView):
 	serializer_class = MaterialSerializer
 
 class APIArquitecteList(generics.ListCreateAPIView):
-	model = Gratacel
-	serializer_class = GratacelSerializer
+	model = Arquitecte
+	serializer_class = ArquitecteSerializer
 
 class APIArquitecteDetail(generics.RetrieveUpdateDestroyAPIView):
-	model = Gratacel
-	serializer_class = GratacelSerializer
+	model = Arquitecte
+	serializer_class = ArquitecteSerializer
 
 
 
