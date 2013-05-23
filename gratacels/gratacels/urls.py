@@ -7,9 +7,9 @@ from django.views.generic import DetailView, ListView, UpdateView
 from igratacels.models import *
 from igratacels.forms import EstilForm, MaterialForm, ArquitecteForm, GratacelForm
 from igratacels.views import MaterialCreate, EstilCreate, ArquitecteCreate, GratacelCreate
-from igratacels.views import*
+from igratacels.views import APIGratacelList, APIGratacelDetail, APIEstilList, APIEstilDetail, \
+			     APIMaterialList, APIMaterialDetail, APIArquitecteList, APIArquitecteDetail
 
-#from igratacels.views import APIMaterialDetail, APIMaterialList, APIEstilList, APIEstilDetail, APIArquitecteList,APIArquitecteDetail, APIGratacelDetail, APIGratacelList
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -88,7 +88,7 @@ urlpatterns = patterns('',
     url(r'^estil/(?P<idEstil>\d+)$',
 	'igratacels.views.estilpage',
 	name='estil_detail'),
-    url(r'material/(?P<idMaterial>\d+)/$',
+    url(r'^material/(?P<idMaterial>\d+)/$',
 	'igratacels.views.materialpage',
 	name='material_detail'),
 
