@@ -28,7 +28,7 @@
 <h2>Gratacels construits:</h2>
 {% if gratacels %}
 <ol>
-{% for arquitecte in arquitectes %}
+{% for gratacel in gratacels %}
 <li>
 <a href="/gratacel/{{gratacel.idGratacel}}">{{gratacel.nom}}</a> - {{ gratacel.ciutat}} - {{ gratacel.altura }}m
 </li>

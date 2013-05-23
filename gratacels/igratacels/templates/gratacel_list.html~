@@ -8,24 +8,27 @@
 
 {% endblock %}
 {% block content %}
-<body>
-<script type="text/javascript"> capPagina();</script>
 
 <h1>Gratacels
 	{% if user.username %}
-		(<a href="/gratacels/create/">Afegir Gratacel</a>)
+		<button onclick="window.location.href='/gratacels/create/'"><img src="/static/img/add.png" alt="button add"/></button>
 	{% endif %}
 </h1>
 {% if gratacels %}
 <table>
 <thead>
-<tr><td>Nom</td><td>Altura</td><td>Nº Pisos</td><td>Ciutat</td></tr>
+<tr><td>Nom</td><td>Altura</td><td>Nº Pisos</td><td>Ciutat</td></td><td></tr>
 </thead>
 {% for gratacel in gratacels %}
 <tr>
-<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}}
+<td><a href="/gratacel/{{gratacel.idGratacel}}"> {{gratacel.nom}}</a></td><td> {{gratacel.altura}} </td><td>{{gratacel.num_plantes}}</td><td> {{gratacel.ciutat}}</td><td>
 	{% if user = gratacel.user %}
-		(<a href="/gratacel/{{gratacel.idGratacel}}/edit/">Editar Gratacel</a>)
+		<button onclick="window.location.href='/gratacel/{{gratacel.idGratacel}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
+		<button onclick="window.location.href='/gratacel/{{gratacel.idMaterial}}/delete/'">
+			<img src="/static/img/delete.png" alt="button delete"/>
+		</button>
 	{% endif %}</td>
 </tr>
 {% endfor %}

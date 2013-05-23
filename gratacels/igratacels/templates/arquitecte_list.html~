@@ -12,26 +12,31 @@
 
 <h1>Arquitectes
 	{% if user.username %}
-		(<a href="/arquitectes/create/">Afegir Arquitecte</a>)
+		<button onclick="window.location.href='/arquitectes/create/'"><img src="/static/img/add.png" alt="button add"/></button>
 	{% endif %}
 </h1>	
 {% if arquitectes %}
 <table>
 <thead>
-<tr><td>Nom</td><td>Data Naixement</td><td>Data Defunció</td><td>Nacionalitat</td></tr>
+<tr><td>Nom</td><td>Data Naixement</td><td>Data Defunció</td><td>Nacionalitat</td><td></td></tr>
 </thead>
 {% for arquitecte in arquitectes %}
 <tr>
-<td><a href="/arquitecte/{{arquitecte.idArquitecte}}"> {{arquitecte.cognom}}, {{arquitecte.nom}}</a></td><td> {{arquitecte.data_naixement}} </td><td>{{arquitecte.data_defuncio}}</td><td> {{arquitecte.nacionalitat}}
+<td><a href="/arquitecte/{{arquitecte.idArquitecte}}"> {{arquitecte.cognom}}, {{arquitecte.nom}}</a></td><td> {{arquitecte.data_naixement}} </td><td>{{arquitecte.data_defuncio}}</td><td> {{arquitecte.nacionalitat}}</td>
+	<td>
 	{% if user = arquitecte.user %}
-		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
-		(<a href="/arquitecte/{{arquitecte.idMaterial}}/delete/">Eliminar Material</a>)
-	{% endif %}</td>
+		<button onclick="window.location.href='/arquitecte/{{arquitecte.idArquitecte}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
+		<button onclick="window.location.href='/arquitecte/{{arquitecte.idArquitecte}}/delete/'">
+			<img src="/static/img/delete.png" alt="button delete"/>
+		</button>
+	{% endif %}
+	</td>
 </tr>
 {% endfor %}
 </table>
 {% else %}
 <p>No hi ha arquitectes a la base de dades</p>
 {% endif %}
-<script type="text/javascript"> peuPagina();</script>
 {% endblock %}

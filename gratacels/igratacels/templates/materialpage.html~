@@ -8,9 +8,11 @@
 {% endblock %}
 {% block content %}
 	
-<h1>Dades del Material {{material.nom}} {% if user = material.user %}
+<h1>Dades del Material {{material.nom}}
+	{% if user = material.user %}
 		(<a href="/material/{{material.idMaterial}}/edit/">Editar Material</a>)
-	{% endif %}</h1>
+	{% endif %}
+</h1>
 <ul>
 <li>Dentitat: {{material.densitat}} kg/m3</li>
 <li>Cost: {{material.cost}} €</li>

@@ -25,21 +25,21 @@
 <li> Estil: <a href="/estil/{{estils.idEstil}}">{{ estils.nom }} </a></li>
 <li> Posicio del Ranquing Mundial: {{ gratacel.posicio_ranquing }} </li>
 </ul>
-<!--{% if arquitectes %}-->
+{% if arquitectes %}
 <h2>Arquitectes:</h2>
 <table>
 <thead>
 <tr><td>Nom</td><td>Nacionalitat</td></tr>
 </thead>
-{% if arquitectes %}
+{% for arquitecte in arquitectes %}
 <tr>
 <td><a href="/arquitecte/{{arquitecte.idArquitecte}}">{{arquitecte.cognom}}, {{arquitecte.nom}} </a></td><td> {{ arquitecte.nacionalitat }}</td>
 </tr>
-{% endif %}
+{% endfor %}
 </table>
-<!--{% else %}-->
+{% else %}
 <p>No te arquitectes associats.</p>
-<!--{% endif %}-->
+{% endif %}
 
 {% if materials %}
 

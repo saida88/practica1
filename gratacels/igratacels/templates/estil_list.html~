@@ -11,19 +11,24 @@
 
 <h1>Estils
 	{% if user.username %}
-		(<a href="/estils/create/">Afegir Estil</a>)
+		<button onclick="window.location.href='/estils/create/'"><img src="/static/img/add.png" alt="button add"/></button>
 	{% endif %}
 </h1>
 {% if estils %}
 <table>
 <thead>
-<tr><td>Nom</td><td>Any Inici</td><td>Any Final</td></tr>
+<tr><td>Nom</td><td>Any Inici</td><td>Any Final</td><td></td></tr>
 </thead>
 {% for estil in estils %}
 <tr>
-<td><a href="/estil/{{estil.idEstil}}"> {{estil.nom}}</a></td><td> {{estil.dataInici}}</td><td>{{estil.dataFi}}
+<td><a href="/estil/{{estil.idEstil}}"> {{estil.nom}}</a></td><td> {{estil.dataInici}}</td><td>{{estil.dataFi}}</td><td>
 	{% if user = estil.user %}
-		(<a href="/estil/{{estil.idEstil}}/edit/">Editar Estil</a>)
+		<button onclick="window.location.href='/estil/{{estil.idEstil}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
+		<button onclick="window.location.href='/estil/{{estil.idMaterial}}/delete/'">
+			<img src="/static/img/delete.png" alt="button delete"/>
+		</button>
 	{% endif %}</td>
 </tr>
 {% endfor %}
