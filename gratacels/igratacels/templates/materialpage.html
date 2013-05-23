@@ -10,7 +10,9 @@
 	
 <h1>Dades del Material {{material.nom}}
 	{% if user = material.user %}
-		(<a href="/material/{{material.idMaterial}}/edit/">Editar Material</a>)
+		<button onclick="window.location.href='/material/{{material.idMaterial}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
 	{% endif %}
 </h1>
 <ul>

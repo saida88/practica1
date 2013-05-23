@@ -12,7 +12,9 @@
 
 <h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}}
 	{% if user = arquitecte.user %}
-		(<a href="/arquitecte/{{arquitecte.idArquitecte}}/edit/">Editar Arquitecte</a>)
+		<button onclick="window.location.href='/arquitecte/{{arquitecte.idArquitecte}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
 	{% endif %}
 </h1>
 

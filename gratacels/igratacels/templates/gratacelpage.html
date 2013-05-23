@@ -13,7 +13,9 @@
 
 <h1>Dades del Gratacel {{ gratacel.nom }}
 	{% if user = gratacel.user %}
-		(<a href="/gratacel/{{gratacel.idGratacel}}/edit/">Editar Gratacel</a>)
+		<button onclick="window.location.href='/gratacel/{{gratacel.idGratacel}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
 	{% endif %}
 </h1>
 <ul>

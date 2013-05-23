@@ -10,7 +10,9 @@
 	
 <h1>Dades del Estil {{estil.nom}}
 	{% if user = estil.user %}
-		(<a href="/estil/{{estil.idEstil}}/edit/">Editar Estil</a>)
+		<button onclick="window.location.href='/estil/{{estil.idEstil}}/edit/'">
+			<img src="/static/img/edit.png" alt="button edit"/>
+		</button>
 	{% endif %}
 </h1>
 <ul>
