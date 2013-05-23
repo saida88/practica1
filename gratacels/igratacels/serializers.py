@@ -16,25 +16,25 @@ class GratacelSerializer(HyperlinkedModelSerializer):
 
 class MaterialSerializer(HyperlinkedModelSerializer):
 	url = HyperlinkedIdentityField(view_name='material-detail')
-##\tgratacel = HyperlinkedRelatedField(view_name='gratacel-detail')
+	gratacel_set = HyperlinkedRelatedField(many=True, read_only=True, view_name='gratacel-detail')
 	user = CharField(read_only=True)
 
 	class Meta:
 		model = Material
-		fields = ('nom', 'densitat', 'cost', 'user', 'date')#,'gratacel')
+		fields = ('nom', 'densitat', 'cost', 'user', 'date',  'gratacel_set')
 
 class EstilSerializer(HyperlinkedModelSerializer):
 	url = HyperlinkedIdentityField(view_name='estil-detail')
-	#gratacel = HyperlinkedRelatedField(view_name='gratacel-detail')
+	gratacel_set = HyperlinkedRelatedField(many=True, read_only=True, view_name='gratacel-detail')
 	user = CharField(read_only=True)
 
 	class Meta:
 		model = Estil
-		fields = ('nom', 'dataInici', 'dataFi', 'user', 'date')#, 'gratacel')
+		fields = ('nom', 'dataInici', 'dataFi', 'user', 'date',  'gratacel_set')
 
 class ArquitecteSerializer(HyperlinkedModelSerializer):
 	url = HyperlinkedIdentityField(view_name='arquitecte-detail')
-	#gratacel = HyperlinkedRelatedField(view_name='gratacel-detail')
+	gratacel_set = HyperlinkedRelatedField(many=True, read_only=True, view_name='gratacel-detail')
 	user = CharField(read_only=True)
 
 	class Meta:

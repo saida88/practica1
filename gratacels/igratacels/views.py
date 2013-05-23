@@ -19,8 +19,8 @@ from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-#from serializers import ArquitecteSerializer, EstilSerializer, MaterialSerializer, GratacelSerializer
-from serializers import *
+from serializers import ArquitecteSerializer, EstilSerializer, MaterialSerializer, GratacelSerializer
+
 
 
 def mainpage(request):
@@ -340,8 +340,6 @@ class GratacelDelete(DeleteView):
 	success_url = '/gratacels'
 
 #API RESTFUL
-
-
 class APIGratacelList(generics.ListCreateAPIView):
 	model = Gratacel
 	serializer_class = GratacelSerializer
