@@ -39,4 +39,4 @@ class ArquitecteSerializer(HyperlinkedModelSerializer):
 
 	class Meta:
 		model = Arquitecte
-		fields = ('nom', 'cognom', 'data_naixement', 'data_defuncio', 'nacionalitat', 'imatge', 'user', 'date',)# 'gratacel')
+		fields = ('nom', 'cognom', 'data_naixement', 'data_defuncio', 'nacionalitat', 'imatge', 'user', 'date', 'gratacel_set')

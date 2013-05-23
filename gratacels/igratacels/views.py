@@ -325,19 +325,19 @@ class MaterialDelete(DeleteView):
 	success_url = reverse_lazy('material_list')
 
 class EstilDelete(DeleteView):
-	model = Material
+	model = Estil
 	template_name = 'delete.html'
-	success_url = '/estils'
+	success_url = reverse_lazy('estil_list')
 
 class ArquitecteDelete(DeleteView):
-	model = Material
+	model = Arquitecte
 	template_name = 'delete.html'
-	success_url = '/arquitectes'
+	success_url = reverse_lazy('arquitecte_list')
 
 class GratacelDelete(DeleteView):
-	model = Material
+	model = Gratacel
 	template_name = 'delete.html'
-	success_url = '/gratacels'
+	success_url = reverse_lazy('gratacel_list')
 
 #API RESTFUL
 class APIGratacelList(generics.ListCreateAPIView):
