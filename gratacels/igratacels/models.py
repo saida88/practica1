@@ -54,6 +54,7 @@ class Gratacel (models.Model):
 	altura_terrat = models.IntegerField()
 	num_plantes = models.IntegerField()
 	ciutat = models.TextField(max_length=25)
+	pais = models.TextField(max_length=25)
 	any_inici = models.IntegerField()
 	idEstil = models.ForeignKey(Estil)
 	posicio_ranking = models.IntegerField(blank=True, null=True)
@@ -67,15 +68,3 @@ class Gratacel (models.Model):
 		return u"%s" % self.name
 	def get_absolute_url(self):
 		return reverse('gratacel_detail', kwargs={'idGratacel': self.pk})
-
-
-#class GratacelsArquitecte (models.Model):
-#	idGratacel = models.ForeignKey(Gratacel, primary_key=True)
-#	idArquitecte = models.ForeignKey(Arquitecte, primary_key=True)
-
-#class GratacelsMaterials (models.Model):
-#	idGratacel = models.ForeignKey(Gratacel, primary_key=True)
-#	idMaterial = models.ForeignKey(Materials, primary_key=True)
-
-	
-	
