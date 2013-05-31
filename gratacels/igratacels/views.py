@@ -53,11 +53,13 @@ def gratacelpage(request, idGratacel):
 	arquitectes = gratacel.arquitectes.all()
 	materials = gratacel.materials.all()
 	estils = Estil.objects.get(idEstil=gratacel.idEstil_id)
+	reviews = gratacel.gratacelreview_set
 	variables = Context({
 		'gratacel': gratacel,
 		'arquitectes': arquitectes,
 		'estils': estils,
 		'materials': materials,
+		'reviews':reviews,
 		'user': request.user
 		})
 	output = template.render(variables)
@@ -246,6 +248,16 @@ def userpage(request, username):
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
+
+def review(request, pk):
+    gratacel = get_object_or_404(Gratacel, pk=idGratacel)
+    review = RestaurantReview(
+        rating=request.POST['rating'],
+        comment=request.POST['comment'],
+        user=request.user,
+        gratacel=gratacel)
+    review.save()
+    return HttpResponseRedirect(urlresolvers.reverse('gratacelpage', args=(gratacel.idGratacel,)))
 
 class GratacelDetail (DetailView):
 	model = Gratacel

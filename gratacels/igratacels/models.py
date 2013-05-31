@@ -65,6 +65,18 @@ class Gratacel (models.Model):
 	date = models.DateField(default=date.today)
 	
 	def __unicode__(self):
-		return u"%s" % self.name
+		return u"%s" % self.nom
 	def get_absolute_url(self):
 		return reverse('gratacel_detail', kwargs={'idGratacel': self.pk})
+
+class Review(models.Model):
+    RATING_CHOICES = ((1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'))
+    rating = models.PositiveSmallIntegerField('Ratings (stars)', blank=False, default=3, choices=RATING_CHOICES)
+    comment = models.TextField(blank=True, null=True)
+    user = models.ForeignKey(User, default=User.objects.get(id=1))
+    date = models.DateField(default=date.today)
+
+class GratacelReview(Review):
+    gratacel = models.ForeignKey(Gratacel)
+
+
