@@ -93,7 +93,7 @@ urlpatterns = patterns('',
 	name='material_detail'),
 
     # Url per afegir reviews
-    url(r'^gratacel/(?P<idGratacel>\d+)/reviews/create/$',
+    url(r'^gratacel/(?P<idGratacel>\d+)/reviews/create$',
 	'igratacels.views.review',
 	name='review_create'),
     

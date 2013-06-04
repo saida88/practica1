@@ -61,6 +61,7 @@
 {% endif %}
 <h2>Reviews</h2>
 <ul>
+{% if reviews %}
     {% for review in reviews %}
         <li>
             <p>{{ review.rating }} star{{ review.rating|pluralize }}</p>
@@ -68,6 +69,9 @@
             <p>Created by {{ review.user }} on {{ review.date }}</p>
         </li>
     {% endfor %}
+{% else %}
+<p>No te comentaris associats.</p>
+{% endif %}
 </ul>
 
 <h3>Add Review</h3>

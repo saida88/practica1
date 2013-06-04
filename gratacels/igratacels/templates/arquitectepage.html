@@ -7,8 +7,10 @@
 	<title>Gratacels DataBase: {{arquitecte.cognom}}, {{arquitecte.nom}}</title>
 {% endblock %}
 {% block content %}
-	
-<img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}" />
+<span vocab="http://schema.org/"  typeof="Person">	
+<img id="fotoarquitecte" src="/static/img/{{arquitecte.imatge}}" alt="fotografia del arquitecte {{arquitecte.nom}}">
+	<span property ="image">/static/img/{{arquitecte.imatge}}</span>
+</img>
 
 <h1>Dades del Arquitecte {{arquitecte.cognom}}, {{arquitecte.nom}}
 	{% if user = arquitecte.user %}
@@ -19,13 +21,15 @@
 </h1>
 
 <ul>
-<li>Nom: {{arquitecte.nom}}</li>
-<li>Cognom: {{arquitecte.cognom}}</li>
-<li>Data Naixement: {{arquitecte.data_naixement}}</li>
-<li>Data Defuncio: {{arquitecte.data_defuncio}}</li>
-<li>Nacionalitat: {{arquitecte.nacionalitat}}</li>
-</ul>
 
+ <span vocab="http://schema.org/"  typeof="Person"> 
+<li>Nom: <span property="name">{{arquitecte.nom}}</span></li>
+<li>Cognom: <span property="familyName">{{arquitecte.cognom}}</span></li>
+<li>Data Naixement: <sapn property="birthDate">{{arquitecte.data_naixement}}</span></li>
+<li>Data Defuncio: <sapn property="deathDate">{{arquitecte.data_defuncio}}</span></li>
+<li>Nacionalitat: <span property="nationality">{{arquitecte.nacionalitat}}</span></li>
+</ul>
+</span>
 
 <h2>Gratacels construits:</h2>
 {% if gratacels %}

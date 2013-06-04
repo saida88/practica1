@@ -70,12 +70,14 @@ class Gratacel (models.Model):
 		return reverse('gratacel_detail', kwargs={'idGratacel': self.pk})
 
 class Review(models.Model):
-    RATING_CHOICES = ((1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'))
-    rating = models.PositiveSmallIntegerField('Ratings (stars)', blank=False, default=3, choices=RATING_CHOICES)
-    comment = models.TextField(blank=True, null=True)
-    user = models.ForeignKey(User, default=User.objects.get(id=1))
-    date = models.DateField(default=date.today)
-
+    RATING_CHOICES = ((1, 'one'), (2, 'two'), (3,'three'), (4,'four'), (5, 'five'))	 	
+    rating  =  models.PositiveSmallIntegerField('Rating (stars)', blank=False, default=3, choices=RATING_CHOICES)	
+    comment = models.TextField(blank=True,  null=True)	
+    user  =  models.ForeignKey(User)	
+    date = models.DateField(default=date.today)	
+    #class Meta:	
+	#abstract  =  True	
+  
 class GratacelReview(Review):
     gratacel = models.ForeignKey(Gratacel)
 
