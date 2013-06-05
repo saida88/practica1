@@ -8,10 +8,13 @@
 
 	{% endblock %}
 {% block content %}
+<span vocab="http://schema.org/"  typeof="Place">	
+  
 
-<img id="fotogratacel" src="/static/img/{{gratacel.imatge}}" alt="fotografia del gratacel {{gratacel.nom}}" />
+<img property="image" src="/static/img/{{gratacel.imatge}}" id="fotogratacel" alt="fotografia del gratacel {{gratacel.nom}}"/>
 
-<h1>Dades del Gratacel {{ gratacel.nom }}
+
+<h1>Dades del Gratacel <span property="name">{{ gratacel.nom }}</span>
 	{% if user = gratacel.user %}
 		<button onclick="window.location.href='/gratacel/{{gratacel.idGratacel}}/edit/'">
 			<img src="/static/img/edit.png" alt="button edit"/>
@@ -60,19 +63,34 @@
 <p>No te materials associats.</p>
 {% endif %}
 <h2>Reviews</h2>
-<ul>
 {% if reviews %}
-    {% for review in reviews %}
-        <li>
-            <p>{{ review.rating }} star{{ review.rating|pluralize }}</p>
-            <p>{{ review.comment }}</p>
-            <p>Created by {{ review.user }} on {{ review.date }}</p>
-        </li>
-    {% endfor %}
+<span rel="aggregateRating">
+   <p typeof="AggregateRating">
+   Puntuacio Mitja: 
+   <span property="ratingValue">{{gratacel.averageRating|stringformat:".1f"}}</span>
+   {% with reviews|length as reviewCount %}
+   (de <span property="reviewCount">{{reviewCount}}</span>
+   comentari{{reviewCount|pluralize}})	
+   {% endwith %}	
+   </p>	  
+</span>	
+  
+   <ul rel="review">
+   {% for review in reviews %}
+   <li typeof="Review">
+     <p rel="reviewRating" typeof="Rating">
+     <span property="worstRating" content="1"></span>
+     <span property="ratingValue">{{ review.rating }}</span> star{{ review.rating|pluralize }}
+     <span property="bestRating" content="5"></span>
+     <p property="description">{{ review.comment }}</p>
+     <p>Created by <span property="author">{{ review.user }}</span> on <span property="publishDate">{{ review.date }}</span></p>
+   </li>
+   {% endfor %}
+   </ul>
 {% else %}
 <p>No te comentaris associats.</p>
 {% endif %}
-</ul>
+</span>
 
 <h3>Add Review</h3>
 <form action="{% url 'review_create' gratacel.idGratacel %}" method="post">

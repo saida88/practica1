@@ -15,7 +15,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 
-from rest_framework import generics
+from rest_framework import generics, permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -269,7 +269,7 @@ def review(request, idGratacel):
         user=request.user,
         gratacel=gratacel)
     review.save()
-    return HttpResponseRedirect(reverse('gratacelpage', args=(gratacel.idGratacel,)))
+    return HttpResponseRedirect(reverse('gratacel-detail', args=(gratacel.idGratacel,)))
 
 class GratacelDetail (DetailView):
 	model = Gratacel
