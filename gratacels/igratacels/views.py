@@ -2,7 +2,7 @@
 
 from django.http import HttpResponse, Http404
 from django.contrib.auth.models import User
-from django.template import Context
+from django.template import Context,RequestContext
 from django.template.loader import get_template
 from django.shortcuts import render_to_response
 from igratacels.models import *
@@ -14,7 +14,6 @@ from django.core.urlresolvers import reverse_lazy
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
-
 from rest_framework import generics, permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -65,8 +64,8 @@ def gratacelpage(request, idGratacel):
 		'user': request.user,
 		'RATING_CHOICES': RATING_CHOICES
 		})
-	output = template.render(variables)
-	return HttpResponse(output)
+	#output = template.render(variables)
+	return render_to_response('gratacelpage.html', variables, context_instance=RequestContext(request))
 
 def gratacel_list(request):
 	try:
@@ -263,13 +262,13 @@ def review(request, idGratacel):
 #	review = review
 #	gratacel = gratacel)
 
-    review = RestaurantReview(
+    review = GratacelReview(
         rating=request.POST['rating'],
         comment=request.POST['comment'],
         user=request.user,
         gratacel=gratacel)
     review.save()
-    return HttpResponseRedirect(reverse('gratacel-detail', args=(gratacel.idGratacel,)))
+    return HttpResponseRedirect(reverse('gratacel_detail', args=(gratacel.idGratacel,)))
 
 class GratacelDetail (DetailView):
 	model = Gratacel

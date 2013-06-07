@@ -68,10 +68,17 @@ class Gratacel (models.Model):
 		return u"%s" % self.nom
 	def get_absolute_url(self):
 		return reverse('gratacel_detail', kwargs={'idGratacel': self.pk})
+	def averageRating(self):
+		countTotal = 0.0
+		countNum = 0
+		for review in self.gratacelreview_set.all():
+			countNum +=1
+			countTotal += review.rating
+		return countTotal/countNum
 
 class Review(models.Model):
-    RATING_CHOICES = ((1, 'one'), (2, 'two'), (3,'three'), (4,'four'), (5, 'five'))	 	
-    rating  =  models.PositiveSmallIntegerField('Rating (stars)', blank=False, default=3, choices=RATING_CHOICES)	
+    RATING_CHOICES = ((1, '1'), (2, '2'), (3,'3'), (4,'4'), (5, '5'))	 	
+    rating  =  models.PositiveSmallIntegerField('Ratings (stars)', blank=False, default=3, choices=RATING_CHOICES)	
     comment = models.TextField(blank=True,  null=True)	
     user  =  models.ForeignKey(User)	
     date = models.DateField(default=date.today)	

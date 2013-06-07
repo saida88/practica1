@@ -118,13 +118,13 @@ urlpatterns = patterns('',
 
 
 #API URL
-url(r'^api/gratacel/$', APIGratacelList.as_view(), name='gratacel-list'),
+url(r'^api/gratacels/$', APIGratacelList.as_view(), name='gratacel-list'),
 url(r'^api/gratacel/(?P<pk>\d+)/$', APIGratacelDetail.as_view(), name='gratacel-detail'),
-url(r'^api/material/$', APIMaterialList.as_view(), name='material-list'),
+url(r'^api/materials/$', APIMaterialList.as_view(), name='material-list'),
 url(r'^api/material/(?P<pk>\d+)/$', APIMaterialDetail.as_view(), name='material-detail'),
-url(r'^api/estil/$', APIEstilList.as_view(), name='estil-list'),
+url(r'^api/estils/$', APIEstilList.as_view(), name='estil-list'),
 url(r'^api/estil/(?P<pk>\d+)/$', APIEstilDetail.as_view(), name='estil-detail'),
-url(r'^api/arquitecte/$', APIArquitecteList.as_view(), name='arquitecte-list'),
+url(r'^api/arquitectes/$', APIArquitecteList.as_view(), name='arquitecte-list'),
 url(r'^api/arquitecte/(?P<pk>\d+)/$', APIArquitecteDetail.as_view(), name='arquitecte-detail'),
 
 )
